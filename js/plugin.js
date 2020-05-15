@@ -64,5 +64,61 @@ $(document).ready(function(){
   $('.star-rating input[type=radio]:checked:disabled').each(function(){
     $(this).prevAll('label').addClass('none');
   });
+
+  
+ /* -- increase and dicease quantity  -- */
+ $('.decrease-btn').on('click',function(){
+  if ($(this).next().val() > 0) {
+    $(this).next().val(+$(this).next().val() - 1);
+  }
+})
+$('.increase-btn').on('click',function(){
+  $(this).prev().val(+$(this).prev().val() + 1);
+})
+/* -- ./increase and dicease quantity  -- */
+
+/* -- Calcoulat price -- */
+var total_amount = 0;
+$('.cart-product .total').siblings('.value-button').on('click', function(){
+  total_amount = 0;
+  var count = $(this).siblings('input').val();
+  var price = parseInt($(this).siblings('.stander').attr('value'));
+  $(this).siblings('.total').text('ADE ' + price * count );
+  $('.cart-product .total').each(function(){
+    total_amount += parseInt($(this).text().slice(4));
+  });
+  $('.total-shopping .total-shopping-price').text('ADE ' + total_amount);
+});
+$('.cart-btn').on('click', function(){
+  $('.cart-block').toggleClass('active');
+  $('.alloverlay').fadeToggle(500);
+});
+$('.alloverlay').on('click',function(){
+  $('.cart-block').toggleClass('active');
+  $('.alloverlay').fadeToggle(500);
+});
+
+$('.close-cart').on('click',function(){
+  $('.cart-block').toggleClass('active');
+  $('.alloverlay').fadeToggle(500);
+});
+$('.receipt .value-button').on('click', function(){
+  total_amount = 0;
+  var count = $(this).siblings('input').val();
+  var price = parseInt($(this).siblings('.item-price').attr('value'));
+  $(this).parent().siblings('.pr-price').text('ADE ' + price * count );
+  $('.pr-price').each(function(){
+    total_amount += parseInt($(this).text().slice(4));
+  });
+  $('.sub-total .total-price').text('ADE ' + total_amount);
+});
+/* -- ./Calcoulat price -- */
+
+ /* -- Outside nav links -- */
+ $('.payment a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  var target = this.href.split('#');
+  $('.nav a').filter('[href="#'+target[1]+'"]').tab('show');        
+})
+/* -- ./Outside nav links --*/
   
 });
