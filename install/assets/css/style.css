@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Lalezar');
+body {
+    font-family: cairo, serif ;
+    line-height: 30px;
+    font-size: 14px;
+    background: #E0E0E0;
+}
+.font-lazar
+{
+    font-family:  'Lalezar', cursive;
+}
+
+.dir-rtl
+{
+    direction: rtl;
+}
+.cont
+{
+    padding-top:20px;
+}
+.hdr
+{
+    background: #34495E;
+    padding:15 5;
+    color: #fefefe;
+    border-top-right-radius:15px; 
+    border-top-left-radius:15px; 
+}
+.hdr img
+{
+    max-width: 110px;
+    max-height: 110px;
+}
+.footer
+{
+    background: #34495E;
+    padding:10 5;
+    color: #fefefe;
+    border-bottom-right-radius:15px; 
+    border-bottom-left-radius:15px;
+}
+
+.cntnr
+{
+    padding:40 0;
+}
+.praim-btn
+{
+    background: #34495E;
+    color: #fefefe;
+}
