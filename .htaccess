@@ -26,28 +26,33 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 <ifModule mod_rewrite.c>
 RewriteEngine on
-RewriteRule ^home index.php?p=home
+RewriteRule ^home index.php
 RewriteRule ^section categories.php
 RewriteRule ^other other.php
 RewriteRule ^search search.php
+RewriteRule ^offers offers.php
+RewriteRule ^offsection offsection.php
 RewriteRule ^pay payment.php
 RewriteRule ^checkout checkout.php
 RewriteRule ^search search.php
-RewriteRule ^my_account maccount.php
-RewriteRule ^my_addresses maddresses.php
-RewriteRule ^my_purchases mpurchases.php
+RewriteRule ^profile profile.php
+RewriteRule ^my-sells my-sells.php
+RewriteRule ^favourite favourite.php
 RewriteRule ^my_balance mbalance.php
 RewriteRule ^my_tracker mtracker.php
-RewriteRule ^contact contact-us.php
+RewriteRule ^contact contact.php
 RewriteRule ^privacy privacy.php
 RewriteRule ^htuse htuse.php
 RewriteRule ^terms terms.php
 RewriteRule ^recruitment recruitment.php
-RewriteRule ^about-us about-us.php
+RewriteRule ^about-us about-us.php 
+RewriteRule ^boss-speech boss-speech.php 
+RewriteRule ^printed printed.php 
+RewriteRule ^conditions conditions.php 
 RewriteRule ^report report.php
 RewriteRule ^checkout payment.php
 RewriteRule ^activate activate.php
-RewriteRule ^([0-9A-Za-z_-]+)$ single-product.php?p=$1
+RewriteRule ^([0-9A-Za-z_-]+)$ show-offer.php?p=$1
 
 RewriteRule ^dashboard/home dashboard/index.php
 RewriteRule ^dashboard/ssettings dashboard/ssetings.php

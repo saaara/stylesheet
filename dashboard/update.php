@@ -312,27 +312,27 @@ else if($wut == "add_news")
 else if($wut == "add_favs")
 {
 	$uid      = USER_ID;
-	$pid      = $_REQUEST['pid'];
-	$type     = $_REQUEST['type'];
+	$pid      = $engine->filter_text($_REQUEST['pid']);
+	$type     = $engine->filter_text($_REQUEST['type']);
 	if(!empty($pid) && !empty($uid))
 	{
-		$q       = "INSERT IGNORE INTO `favs` SET `uid` = '$uid', `pid` = '$pid'";
-		$smd     = $engine->connect()->query($q);
-		if($smd)
+		if($type == 'add')
 		{
-			if($type == 'btn')
-			{?>
-				<a onclick="del_fav('<?=$pid?>','btn')" id="fvbtn<?=$pid?>">
-		            <i class="flaticon-heart" style="color:red;"></i> 
-		            إزالة من قائمة المفضلة
-		        </a>
-			<?}
-			else
-			{?>
-				<a onclick="del_fav('<?=$pid?>')" style="color:red;">
-                    <i class="flaticon-heart"></i>
-                </a>
-			<?}
+			$q       = "INSERT IGNORE INTO `favs` SET `uid` = '$uid', `pid` = '$pid'";
+			$smd     = $engine->connect()->query($q);
+			if($smd)
+			{
+				$results = array('status' => 1, 'details' => 'تم إضافة المنتج للمُفضلة بنجاح');
+			}
+		}
+		else
+		{
+			$q       = "DELETE FROM `favs` WHERE `uid` = '$uid' AND `pid` = '$pid'";
+			$smd     = $engine->connect()->query($q);
+			if($smd)
+			{
+				$results = array('status' => 1, 'details' => 'تم حذف المنتج من المُفضلة بنجاح');
+			}
 		}
 	}
 	else
@@ -342,39 +342,7 @@ else if($wut == "add_favs")
 	}
 	echo $results = json_encode($results);
 }
-else if($wut == "del_favs")
-{
-	$uid      = USER_ID;
-	$pid      = $_REQUEST['pid'];
-	$type     = $_REQUEST['type'];
-	if(!empty($pid) && !empty($uid))
-	{
-		$q       = "DELETE FROM `favs` WHERE `pid` = '$pid' AND `uid` = '$uid'";
-		$smd     = $engine->connect()->query($q);
-		if($smd)
-		{
-			if($type == 'btn')
-			{?>
-				<a onclick="addfavs('<?=$pid?>','btn')" id="fvbtn<?=$pid?>">
-		            <i class="flaticon-heart"></i> 
-		            إضافة إلى قائمة المفضلة
-		        </a>
-			<?}
-			else
-			{?>
-				<a onclick="addfavs('<?=$pid?>')">
-		            <i class="flaticon-heart"></i> 
-		        </a>
-			<?}
-		}
-	}
-	else
-	{
-		
-		$results = array('status' => 0, 'details' => 'عفواً لا يجب أن تترك أي حقول فارغة');
-	}
-	echo $results = json_encode($results);
-}
+
 else if($wut == "gfavs")
 {
 	$uid  = USER_ID;
@@ -1446,9 +1414,9 @@ else if($wut == "rnk")
 }
 
 else if($wut == "add_cart")
-{
-	$pid       = $_REQUEST['pid'];
-	$type      = $_REQUEST['type'];
+{ 
+	$pid       = $engine->filter_text($_REQUEST['pid']);
+	$type      = $engine->filter_text($_REQUEST['type']);
 	$uid       = USER_ID;
 	$qcheck    = $engine->connect()->query("SELECT * FROM `cart` WHERE (`uid` = '$uid' AND `pid` = '$pid')");
 	$showq     = $qcheck->fetch_array();
@@ -1457,35 +1425,34 @@ else if($wut == "add_cart")
 	{
 		if(isset($_SESSION['email']) && isset($_SESSION['password']))
 		{
-			if($nm <= 0)
+			if($ype == 'add')
 			{
-				$insert = $engine->connect()->query("INSERT IGNORE INTO `cart` SET `pid` = '$pid',`uid` = '$uid', `q` = 1");
+				if($nm <= 0)
+				{
+					$insert = $engine->connect()->query("INSERT IGNORE INTO `cart` SET `pid` = '$pid',`uid` = '$uid', `q` = 1");
+				}
+				else
+				{
+					$q = $showq['q']+1;
+					$insert = $engine->connect()->query("UPDATE `cart` SET `pid` = '$pid',`uid` = '$uid', `q` = '$q' WHERE (`uid` = '$uid' AND `pid` = '$pid')");
+				}
+				if($insert)
+				{	
+					$results = array('status' => 1, 'details' => 'تم إضافة المنتج للعربة');
+				}
 			}
 			else
 			{
-				$q = $showq['q']+1;
-				$insert = $engine->connect()->query("UPDATE `cart` SET `pid` = '$pid',`uid` = '$uid', `q` = '$q' WHERE (`uid` = '$uid' AND `pid` = '$pid')");
-			}
-			if($insert)
-			{
-				if($type == 'btn'){?>
-					<button type="button" onclick='del_cart("<?=$pid?>","btn")' class="btn btn-danger">حذف من السلة</button>
-				<?}else{
-					
-					$results = array('status' => 1, 'details' => 'تم إضافة المنتج للعربة');
+				$insert = $engine->connect()->query("DELETE FROM `cart` WHERE `pid` = '$pid' AND `uid` = '$uid'");
+				if($insert)
+				{	
+					$results = array('status' => 1, 'details' => 'تم حذف المنتج من العربة');
 				}
 			}
 		}
 		else
-		{
-			if($type == 'btn')
-			{
-				echo "الرجاء تسجيل الدخول أولاً";
-			}
-			else{
-				
-				$results = array('status' => 0, 'details' => 'الرجاء تسجيل الدخول أولاً');
-			}
+		{	
+			$results = array('status' => 0, 'details' => 'الرجاء تسجيل الدخول أولاً');
 		}
 	}
 	echo $results = json_encode($results);

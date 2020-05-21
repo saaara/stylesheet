@@ -1488,3 +1488,59 @@ function choose(id)
     document.forms["moderator"]["name"].value = id;
     document.getElementById('show_names').innerHTML = '';
 }
+
+function addto_cart(pid,type)
+{
+    var Xreq        = new XMLHttpRequest();
+    Xreq.onreadystatechange = function()
+    {
+        if(this.readyState < 4 )
+        {  
+            loading();
+        }
+        else if(this.readyState == 4  & this.status == 200)
+        {
+            var response  = JSON.parse(this.responseText);
+            if(response['status'] == 1)
+            {
+                salert("عملية ناجحة!",response['details'],"success","");
+                setTimeout(function(){refresh_content()},2000);
+            }
+            else
+            {
+                salert("عفواً",response['details'],"error","إعادة المحاولة");
+            }
+        }
+    }
+    Xreq.open("GET","dashboard/update.php?req=add_cart&pid="+pid+"&type="+type,true);
+    // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
+    Xreq.send();
+}
+
+function addto_fav(pid,type)
+{
+    var Xreq        = new XMLHttpRequest();
+    Xreq.onreadystatechange = function()
+    {
+        if(this.readyState < 4 )
+        {  
+            loading();
+        }
+        else if(this.readyState == 4  & this.status == 200)
+        {
+            var response  = JSON.parse(this.responseText);
+            if(response['status'] == 1)
+            {
+                salert("عملية ناجحة!",response['details'],"success","");
+                setTimeout(function(){refresh_content()},2000);
+            }
+            else
+            {
+                salert("عفواً",response['details'],"error","إعادة المحاولة");
+            }
+        }
+    }
+    Xreq.open("GET","dashboard/update.php?req=add_favs&pid="+pid+"&type="+type,true);
+    // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
+    Xreq.send();
+}

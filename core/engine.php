@@ -105,8 +105,13 @@ class engine
 		$num = $q-> num_rows;
 		if(isset($_SESSION['email']) && isset($_SESSION['password']) && $num >= 1)
 		{
-			$locat = $locat = S_URI."/dashboard";
-			header("location: ".$locat." ");
+			// $locat = $locat = S_URI."/dashboard";
+			// header("location: ".$locat." ");
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}//end have session
 
@@ -751,102 +756,102 @@ class engine
 		}
 	}// enbd send mail
 
-function rate($num,$type="")
-{
-	if($type == 'grate')
+	function rate($num,$type="")
 	{
-		$pid = $num;
-		$qr    = "SELECT * FROM `comments` WHERE (`to` = '$pid' AND `status` = 1)";
-		$smdr  = $this->connect()->query($qr);
-		$showr = $smdr->fetch_array();
-		$num   = $showr['rate'];
+		if($type == 'grate')
+		{
+			$pid = $num;
+			$qr    = "SELECT * FROM `comments` WHERE (`to` = '$pid' AND `status` = 1)";
+			$smdr  = $this->connect()->query($qr);
+			$showr = $smdr->fetch_array();
+			$num   = $showr['rate'];
+		}
+		else
+		{
+			$num = $num;
+		}
+		if($num == 0)
+		{
+			echo"
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+			";
+		}
+		else if($num == 1)
+		{
+			echo"
+				<i class='fa fa-star fa-gold'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+			";
+		}
+		else if($num == 2)
+		{
+			echo"
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+			";
+		}
+		else if($num == 3)
+		{
+			echo"
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='far fa-star'></i>
+				<i class='far fa-star'></i>
+			";
+		}
+		else if($num == 4)
+		{
+			echo"
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='far fa-star'></i>
+			";
+		}
+		else if($num == 5)
+		{
+			echo"
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+				<i class='fa fa-star fa-gold'></i>
+			";
+		}
 	}
-	else
-	{
-		$num = $num;
-	}
-	if($num == 0)
-	{
-		echo"
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-		";
-	}
-	else if($num == 1)
-	{
-		echo"
-			<i class='fa fa-star fa-gold'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-		";
-	}
-	else if($num == 2)
-	{
-		echo"
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-		";
-	}
-	else if($num == 3)
-	{
-		echo"
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='far fa-star'></i>
-			<i class='far fa-star'></i>
-		";
-	}
-	else if($num == 4)
-	{
-		echo"
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='far fa-star'></i>
-		";
-	}
-	else if($num == 5)
-	{
-		echo"
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-			<i class='fa fa-star fa-gold'></i>
-		";
-	}
-}
 // avrg rate
-function avgrate($usr)
-{
-	$q 		 = "SELECT * FROM `comments` WHERE `to` = '$usr'";
-	$smd     = $this->connect()->query($q);
-	$num 	 = $smd->num_rows;
-	$sum 	 = "SELECT SUM(rate) AS total FROM `comments` WHERE `to` = '$usr'";
-	$smds    = $this->connect()->query($sum);
-	$row     = $smds->fetch_array();
-	$total   = $row['total'];
-	if($total != 0 || $num != 0)
+	function avgrate($usr)
 	{
-		$avg     = round($total/$num);
-	}
-	else
-	{
-		$avg = 0;
-	}
-	echo $this->rate($avg) .'( '.$avg.' )';
+		$q 		 = "SELECT * FROM `comments` WHERE `to` = '$usr'";
+		$smd     = $this->connect()->query($q);
+		$num 	 = $smd->num_rows;
+		$sum 	 = "SELECT SUM(rate) AS total FROM `comments` WHERE `to` = '$usr'";
+		$smds    = $this->connect()->query($sum);
+		$row     = $smds->fetch_array();
+		$total   = $row['total'];
+		if($total != 0 || $num != 0)
+		{
+			$avg     = round($total/$num);
+		}
+		else
+		{
+			$avg = 0;
+		}
+		echo $this->rate($avg) .'( '.$avg.' )';
 
-}
+	}
 // get slides 
 	function gslides($place,$type)
 	{
@@ -855,6 +860,32 @@ function avgrate($usr)
 		$show    = $smd->fetch_array();
 		return   $show[$type];
 	}
+// get query
+	function get_query($query)
+	{
+		return $this->connect()->query($query);
+	}
+// get photos
+	function get_photos($pid)
+	{
+		return $this->get_query("SELECT * FROM `photos` WHERE `pid` = '$pid'");
+	}
+// is in favourites
+	function isfav($pid,$uid="")
+	{
+		if(!isset($uid) || empty($uid))
+		{
+			$uid = USER_ID;
+		}
+		$check = $this->get_query("SELECT * FROM `favs` WHERE `pid` = '$pid' AND `uid` = '$uid'");
+		$num 	= $check->num_rows;
+		return $num <= 0 ? false : true;
+	}
+// text filtration
+	function filter_text($text)
+	{
+		return addslashes(htmlspecialchars(strip_tags($text)));
+	}	
 }//end class
 
 

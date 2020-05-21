@@ -1,523 +1,15 @@
-<!DOCTYPE html>
-<html>
-	<head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <!-- Internet Explorer Meta -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- First Mobile Meta -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>الرئيسية</title>
-		<link rel="icon" href="images/cage.png">
-
-		<link rel="stylesheet" href="css/flaticon.css">
-		<link rel="stylesheet" href="css/bootstrap-arabic.css">
-		<link rel="stylesheet" href="css/flickity.min.css">
-		<link rel="stylesheet" href="css/zoomslider.css">
-        <link rel="stylesheet" href="css/all.css">
-		<link rel="stylesheet" href="css/style.css">
-        <!--[if lt IE 9]>
-        <script src="js/html5shiv.min.js"></script>
-       	<script src="js/respond.min.js"></script>
-        <![endif]-->
-	</head>
-	<body>
-
-		<header class="inner">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-sm-2 col-xs-12">
-						<a href="index.html">
-							<img src="images/logo-white.png" class="img-responsive logo">
-						</a>
-					</div>
-					<div class="col-lg-9 col-sm-10 col-xs-12">
-						
-						<!-- Navbar -->
-						<nav class="navbar navbar-default">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav">
-									<li class="active"><a href="index.html">الرئيسية <span class="sr-only">(current)</span></a></li>
-									<li><a href="offers.html">العروض</a></li>
-									<li class="dropdown">
-										<a href="#" data-toggle="dropdown" class="dropdown-toggle">المدونة <span class="caret"></span></a>
-
-										<ul class="dropdown-menu">
-											<li>
-												<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-													<i class="fas fa-caret-right"></i> 
-													قالوا عن الزواج
-												</a>
-												<ul class="dropdown-menu">
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-												</ul>
-											</li>
-											<li>
-												<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-													<i class="fas fa-caret-right"></i> 
-													شهر العسل
-												</a>
-												<ul class="dropdown-menu">
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-												</ul>
-											</li>
-											<li>
-												<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-													<i class="fas fa-caret-right"></i> 
-													قسم أساسي 										
-												</a>
-												<ul class="dropdown-menu">
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-													<li><a href="blogs-in-sub.html">قسم فرعي</a></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a href="#" data-toggle="dropdown" class="dropdown-toggle">تعرف علينا <span class="caret"></span></a>
-
-										<ul class="dropdown-menu">
-											<li>
-												<a href="about-us.html">من نحن</a>
-											</li>
-											<li>
-												<a href="boss-speech.html">كلمة الرئيس</a>
-											</li>
-											<li>
-												<a href="printed.html">الدليل المطبوع</a>
-											</li>
-											<li>
-												<a href="conditions.html">الشروط والأحكام</a>
-											</li>
-										</ul>
-									</li>
-									<li><a href="contact.html">تواصل معنا</a></li>
-								</ul>
-							</div>
-						</nav>
-						<!-- ./Navbar -->
-
-
-						<div class="book_btn">
-
-							<!--
-							<button data-toggle="modal" data-target="#exampleModalLong">
-								<i class="flaticon-interface"></i> تسجيل الدخول
-							</button>
-						  -->
-							<div class="account">
-								<button>
-									<i class="far fa-user-circle"></i> علاء التميمي
-								</button>
-								<ul>
-									<li>
-										<a href="profile.html">حسابي</a>
-									</li>
-									<li>
-										<a href="my-sells.html">مشترياتي</a>
-									</li>
-									<li>
-										<a href="favourite.html">مفضلتي</a>
-									</li>
-									<li>
-										<button class="logout">تسجيل خروج</button>
-									</li>
-								</ul>
-							</div>
-
-							
-
-							<!-- Shopping Cart -->  
-							<a class="cart-btn">
-								<img src="images/icons/cart.svg">
-								<span class="number">15</span>
-							</a> 
-							<div class="cart-block">
-								<h2>عربة الشراء</h2>
-								<div class="list">
-
-									<div class="cart-product">
-										<button class="remove"><i class="glyphicon glyphicon-trash"></i> </button>
-										<div class="info">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/02.jpg" class="img-responsive">
-											</a>
-											<div class="info-block">
-												<a href="offer-details.html">
-													<p>عرض خاص لشهر أيار</p>
-												</a>
-												<!-- Star rating -->
-												<div class="star-rating">
-													<input id="star-5-66" type="radio" name="rating-66" value="star-5" disabled>
-													<label for="star-5-66" title="5 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-4-66" type="radio" name="rating-66" value="star-4"  disabled>
-													<label for="star-4-66" title="4 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-3-66" type="radio" name="rating-66" value="star-3" checked disabled>
-													<label for="star-3-66" title="3 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-2-66" type="radio" name="rating-66" value="star-2" disabled>
-													<label for="star-2-66" title="2 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-1-66" type="radio" name="rating-66" value="star-1" disabled>
-													<label for="star-1-66" title="1 star">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-												</div>
-												<!-- ./Star rating -->
-												<span class="city">
-													<i class="flaticon-signs-1"></i> 
-													الرياض
-												</span>
-												<span class="duration">
-													<i class="flaticon-interface-2"></i> 
-													ينتهي خلال يوم
-												</span>
-												<span class="sall">
-													<i class="flaticon-commerce-and-shopping"></i> 
-													الشراء: 4 مرات
-												</span>
-
-											</div>
-
-										</div>
-										<div class="price">
-											<span class="stander" value="129">AED 129</span>
-											<div class="value-button decrease-btn" value="Decrease Value">-</div>
-											<input type="number" value="0" min="0" disabled />
-											<div class="value-button increase-btn" value="Increase Value">+</div>
-											<span class="total">AED 0</span>
-										</div>
-									</div>
-
-									<div class="cart-product">
-										<button class="remove"><i class="glyphicon glyphicon-trash"></i> </button>
-										<div class="info">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/02.jpg" class="img-responsive">
-											</a>
-											<div class="info-block">
-												<a href="offer-details.html">
-													<p>عرض خاص لشهر أيار</p>
-												</a>
-												<!-- Star rating -->
-												<div class="star-rating">
-													<input id="star-5-77" type="radio" name="rating-77" value="star-5" disabled>
-													<label for="star-5-77" title="5 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-4-77" type="radio" name="rating-77" value="star-4"  disabled>
-													<label for="star-4-77" title="4 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-3-77" type="radio" name="rating-77" value="star-3" checked disabled>
-													<label for="star-3-77" title="3 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-2-77" type="radio" name="rating-77" value="star-2" disabled>
-													<label for="star-2-77" title="2 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-1-77" type="radio" name="rating-77" value="star-1" disabled>
-													<label for="star-1-77" title="1 star">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-												</div>
-												<!-- ./Star rating -->
-												<span class="city">
-													<i class="flaticon-signs-1"></i> 
-													الرياض
-												</span>
-												<span class="duration">
-													<i class="flaticon-interface-2"></i> 
-													ينتهي خلال يوم
-												</span>
-												<span class="sall">
-													<i class="flaticon-commerce-and-shopping"></i> 
-													الشراء: 4 مرات
-												</span>
-
-											</div>
-
-										</div>
-										<div class="price">
-											<span class="stander" value="129">AED 129</span>
-											<div class="value-button decrease-btn" value="Decrease Value">-</div>
-											<input type="number" value="0" min="0" disabled />
-											<div class="value-button increase-btn" value="Increase Value">+</div>
-											<span class="total">AED 0</span>
-										</div>
-									</div>
-
-									<div class="cart-product">
-										<button class="remove"><i class="glyphicon glyphicon-trash"></i> </button>
-										<div class="info">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/02.jpg" class="img-responsive">
-											</a>
-											<div class="info-block">
-												<a href="offer-details.html">
-													<p>عرض خاص لشهر أيار</p>
-												</a>
-												<!-- Star rating -->
-												<div class="star-rating">
-													<input id="star-5-88" type="radio" name="rating-88" value="star-5" disabled>
-													<label for="star-5-88" title="5 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-4-88" type="radio" name="rating-88" value="star-4"  disabled>
-													<label for="star-4-88" title="4 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-3-88" type="radio" name="rating-88" value="star-3" checked disabled>
-													<label for="star-3-88" title="3 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-2-88" type="radio" name="rating-88" value="star-2" disabled>
-													<label for="star-2-88" title="2 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-1-88" type="radio" name="rating-88" value="star-1" disabled>
-													<label for="star-1-88" title="1 star">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-												</div>
-												<!-- ./Star rating -->
-												<span class="city">
-													<i class="flaticon-signs-1"></i> 
-													الرياض
-												</span>
-												<span class="duration">
-													<i class="flaticon-interface-2"></i> 
-													ينتهي خلال يوم
-												</span>
-												<span class="sall">
-													<i class="flaticon-commerce-and-shopping"></i> 
-													الشراء: 4 مرات
-												</span>
-
-											</div>
-
-										</div>
-										<div class="price">
-											<span class="stander" value="129">AED 129</span>
-											<div class="value-button decrease-btn" value="Decrease Value">-</div>
-											<input type="number" value="0" min="0" disabled />
-											<div class="value-button increase-btn" value="Increase Value">+</div>
-											<span class="total">AED 0</span>
-										</div>
-									</div>
-
-									<div class="cart-product">
-										<button class="remove"><i class="glyphicon glyphicon-trash"></i> </button>
-										<div class="info">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/02.jpg" class="img-responsive">
-											</a>
-											<div class="info-block">
-												<a href="offer-details.html">
-													<p>عرض خاص لشهر أيار</p>
-												</a>
-												<!-- Star rating -->
-												<div class="star-rating">
-													<input id="star-5-99" type="radio" name="rating-99" value="star-5" disabled>
-													<label for="star-5-99" title="5 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-4-99" type="radio" name="rating-99" value="star-4"  disabled>
-													<label for="star-4-99" title="4 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-3-99" type="radio" name="rating-99" value="star-3" checked disabled>
-													<label for="star-3-99" title="3 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-2-99" type="radio" name="rating-99" value="star-2" disabled>
-													<label for="star-2-99" title="2 stars">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-													<input id="star-1-99" type="radio" name="rating-99" value="star-1" disabled>
-													<label for="star-1-99" title="1 star">
-															<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-													</label>
-												</div>
-												<!-- ./Star rating -->
-												<span class="city">
-													<i class="flaticon-signs-1"></i> 
-													الرياض
-												</span>
-												<span class="duration">
-													<i class="flaticon-interface-2"></i> 
-													ينتهي خلال يوم
-												</span>
-												<span class="sall">
-													<i class="flaticon-commerce-and-shopping"></i> 
-													الشراء: 4 مرات
-												</span>
-
-											</div>
-
-										</div>
-										<div class="price">
-											<span class="stander" value="129">AED 129</span>
-											<div class="value-button decrease-btn" value="Decrease Value">-</div>
-											<input type="number" value="0" min="0" disabled />
-											<div class="value-button increase-btn" value="Increase Value">+</div>
-											<span class="total">AED 0</span>
-										</div>
-									</div>
-									
-								</div>
-								<div class="total-shopping">
-									<div class="total-amount">
-										<p>مجموع الطلب:</p>
-										<span class="total-shopping-price">AED 0</span>
-									</div>
-									<ul>
-										<li>
-											<a href="payment.html" class="btn-buy"><i class="flaticon-shopping-cart"></i> أشتري</a>
-										</li>
-										<li>
-											<button class="close-cart">واصل التسوق</button>
-										</li>
-									</ul>                                            
-								</div>
-							</div>
-							<div class="alloverlay"></div>
-							<!-- ./Shopping Cart -->
-
-						</div>
-
-						<!-- Login & Sign Up-->
-						<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-							<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								
-								<div class="modal-body">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-
-									<nav>
-										<div class="nav nav-tabs" id="nav-tab" role="tablist">
-											<a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true">
-												<i class="flaticon-interface"></i> 
-												تسجيل الدخول
-											</a>
-											<a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab"   href="#nav-signup" role="tab" aria-controls="nav-signup" aria-selected="false">
-											<i class="flaticon-profile"></i>
-												إنشاء حساب
-											</a>
-										</div>
-									</nav>
-
-									<!-- Tab panes -->
-									<div class="tab-content" id="nav-tabContent">
-										<div class="tab-pane fade active in" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-											<form class="form-group login-form">
-												<input class="form-control" type="text" placeholder="اسم المستخدم" required>
-												<input class="form-control" type="password" placeholder="كلمة المرور" required>
-												<p class="forget-password">
-													<i class="far fa-lightbulb"></i> هل نسيت كلمة المرور؟
-												</p>
-												<button type="submit" class="btn btn-block">تسجيل دخول</button>
-											</form>
-											<div class="signup-social row">
-												<div class="col-sm-4 col-xs-12">
-													<a title="Sign up using gmail" class="google-login-link" href="#">
-														Gmail  <i class="fas fa-envelope"></i>
-													</a>
-												</div>
-												<div class="col-sm-4 col-xs-12">
-													<a title="Sign up using facebook" class="facebook-login-link" href="#">
-													Facebook   <i class="fab fa-facebook-f"></i> 
-													</a>
-												</div>
-												<div class="col-sm-4 col-xs-12">
-													<a title="Sign up using twitter" class="twitter-login-link" href="#">
-														Twitter <i class="fab fa-twitter"></i>
-													</a>
-												</div>
-											</div>
-											
-											<form class="form-group password-show">
-												<input class="form-control" type="email" placeholder="البريد الإلكتروني" required>
-												<button type="submit" class="btn btn-block">إرسال</button>
-											</form>
-
-										</div>
-										<div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
-											<form class="form-group signup-form">
-												<input class="form-control" type="text" placeholder="الاسم" required>
-												<input class="form-control" type="text" placeholder="اسم المستخدم" required>
-												<input class="form-control" type="enail" placeholder="البريد الإلكتروني" required>
-												<input class="form-control" type="password" placeholder="كلمة المرور" required>
-												<input class="form-control" type="password" placeholder="تأكيد كلمة المرور" required>
-												<input class="form-control" type="tel" placeholder="رقم الهاتف" required>
-												<button type="submit" class="btn btn-primary btn-block">إنشاء حساب</button>
-											</form>
-											<div class="signup-social row">
-												<div class="col-sm-4 col-xs-12">
-													<a title="Sign up using gmail" class="google-login-link" href="#">
-														Gmail  <i class="fas fa-envelope"></i>
-													</a>
-												</div>
-												<div class="col-sm-4 col-xs-12">
-													<a title="Sign up using facebook" class="facebook-login-link" href="#">
-													Facebook   <i class="fab fa-facebook-f"></i> 
-													</a>
-												</div>
-												<div class="col-sm-4 col-xs-12">
-													<a title="Sign up using twitter" class="twitter-login-link" href="#">
-														Twitter <i class="fab fa-twitter"></i>
-													</a>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								
-								</div>
-							</div>
-							</div>
-						</div>
-						<!-- ./Login & Sign Up-->
-
-					</div>
-				</div>
-			</div>
-		</header>
-
+<?php 
+include 'sub_header.php';
+?>
 		<!-- Offer Details -->
 		<div class="rest inner-page">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-xs-12">
 						<h2 class="main-title">
-							<img src="images/icons/cage.svg" class="cage" alt="">
+							<img src="assets/images/icons/cage.svg" class="cage" alt="">
 							مشترياتي  
-							<img src="images/icons/heart.svg" class="heart" alt="">
+							<img src="assets/images/icons/heart.svg" class="heart" alt="">
 						</h2>
 
 						<ul class="nav nav-tabs">
@@ -534,7 +26,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 													<a href="offer-details.html">
-														<img src="images/zoomslider/06.jpg" class="img-responsive">
+														<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 													</a>
 												</div>
 												<p class="one-line title">
@@ -592,7 +84,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -650,7 +142,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/05.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/05.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -708,7 +200,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/01.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/01.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -766,7 +258,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -824,7 +316,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/05.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/05.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -882,7 +374,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -940,7 +432,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -998,7 +490,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1056,7 +548,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/05.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/05.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1114,7 +606,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1172,7 +664,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1251,7 +743,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1309,7 +801,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/01.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/01.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1367,7 +859,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1425,7 +917,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1483,7 +975,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1541,7 +1033,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1599,7 +1091,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1657,7 +1149,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/01.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/01.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1715,7 +1207,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1773,7 +1265,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1831,7 +1323,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/05.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/05.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1889,7 +1381,7 @@
 											<div class="single-block">
 												<div class="img-zoom">
 											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
+												<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
 											</a>
 										</div>
 										<p class="one-line title">
@@ -1966,21 +1458,27 @@
 					<div class="col-md-4 col-xs-12">
 						<div class="side-bar">
 							<h3>أفضل العروض</h3>
-	
-	
+
+							<?php 
+							$get_offers = $engine->get_query("SELECT * FROM `offers` ORDER BY `date` DESC LIMIT 7");
+							while($show_offers = $get_offers->fetch_array()){?>
 							<div class="item">
 								<div class="single-block">
 									<div class="col-sm-4 col-xs-12">
 										<div class="img-zoom">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/01.jpg" class="img-responsive">
+											<a href="<?=$show_offers['pid']?>">
+												<?php 
+												$get_image = $engine->get_photos($show_offers['pid']);
+												$show_image = $get_image->fetch_array();
+												?>
+												<img src="<?=$show_image['img']?>" class="img-responsive">
 											</a>
 										</div>
 									</div>
 									<div class="col-sm-8 col-xs-12">
 										<p class="one-line title">
-											<a href="offer-details.html">
-												عرض خاص لشهر أيار
+											<a href="<?=$show_offers['pid']?>">
+												<?=$show_offers['name']?>
 											</a>
 										</p>
 										<!-- Star rating -->
@@ -2009,270 +1507,35 @@
 										<!-- ./Star rating -->
 										<span class="city">
 											<i class="flaticon-signs-1"></i> 
-											الرياض
+											<?=$show_offers['city']?>
 										</span>
 										<span class="duration">
 											<i class="flaticon-interface-2"></i> 
-											ينتهي خلال يوم
+											ينتهي خلال <?=counttime($show_offers['edate'])?>
 										</span>
 										<span class="sall">
 											<i class="flaticon-commerce-and-shopping"></i> 
-											 الشراء: 4 مرات
+											الشراء: <?=$show_offers['visits']?> مرات
 										</span>
 										<span class="price">
-											<del>300SAR</del>
-											225SAR
+											<del><?=$show_offers['oldprice']?>SAR</del>
+											<?=$show_offers['newprice']?>SAR
 										</span>
-										<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
+										<?php 
+										if($engine->isfav($show_offers['pid'])){?>
+										<button class="favourite-btn done" onclick="addto_fav('<?=$pid?>','del')"><i class="flaticon-love-and-romance-1"></i> </button>
+										<?}else{?>
+										<button class="favourite-btn" onclick="addto_fav('<?=$pid?>','add')"><i class="flaticon-love-and-romance-1"></i> </button>
+										<?}?>
 									</div>
 								</div>
 							</div>
-	
-							<div class="item">
-								<div class="single-block">
-									<div class="col-sm-4 col-xs-12">
-										<div class="img-zoom">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-8 col-xs-12">
-										<p class="one-line title">
-											<a href="offer-details.html">
-												عرض خاص لشهر أيار
-											</a>
-										</p>
-										<!-- Star rating -->
-										<div class="star-rating">
-											<input id="star-5" type="radio" name="rating-33" value="star-5" disabled>
-											<label for="star-5" title="5 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-4" type="radio" name="rating-33" value="star-4"  disabled>
-											<label for="star-4" title="4 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-3" type="radio" name="rating-33" value="star-3" checked disabled>
-											<label for="star-3" title="3 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-2" type="radio" name="rating-33" value="star-2" disabled>
-											<label for="star-2" title="2 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-1" type="radio" name="rating-33" value="star-1" disabled>
-											<label for="star-1" title="1 star">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-										</div>
-										<!-- ./Star rating -->
-										<span class="city">
-											<i class="flaticon-signs-1"></i> 
-											الرياض
-										</span>
-										<span class="duration">
-											<i class="flaticon-interface-2"></i> 
-											ينتهي خلال يوم
-										</span>
-										<span class="sall">
-											<i class="flaticon-commerce-and-shopping"></i> 
-											 الشراء: 4 مرات
-										</span>
-										<span class="price">
-											<del>300SAR</del>
-											225SAR
-										</span>
-										<button class="favourite-btn"><i class="flaticon-love-and-romance-1"></i> </button>
-									</div>
-								</div>
-							</div>
-	
-							<div class="item">
-								<div class="single-block">
-									<div class="col-sm-4 col-xs-12">
-										<div class="img-zoom">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/06.jpg" class="img-responsive">
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-8 col-xs-12">
-										<p class="one-line title">
-											<a href="offer-details.html">
-												عرض خاص لشهر أيار
-											</a>
-										</p>
-										<!-- Star rating -->
-										<div class="star-rating">
-											<input id="star-5" type="radio" name="rating-34" value="star-5" disabled>
-											<label for="star-5" title="5 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-4" type="radio" name="rating-34" value="star-4"  disabled>
-											<label for="star-4" title="4 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-3" type="radio" name="rating-34" value="star-3" checked disabled>
-											<label for="star-3" title="3 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-2" type="radio" name="rating-34" value="star-2" disabled>
-											<label for="star-2" title="2 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-1" type="radio" name="rating-34" value="star-1" disabled>
-											<label for="star-1" title="1 star">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-										</div>
-										<!-- ./Star rating -->
-										<span class="city">
-											<i class="flaticon-signs-1"></i> 
-											الرياض
-										</span>
-										<span class="duration">
-											<i class="flaticon-interface-2"></i> 
-											ينتهي خلال يوم
-										</span>
-										<span class="sall">
-											<i class="flaticon-commerce-and-shopping"></i> 
-											 الشراء: 4 مرات
-										</span>
-										<span class="price">
-											<del>300SAR</del>
-											225SAR
-										</span>
-										<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-									</div>
-								</div>
-							</div>
-							
-							<div class="item">
-								<div class="single-block">
-									<div class="col-sm-4 col-xs-12">
-										<div class="img-zoom">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/07.jpg" class="img-responsive">
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-8 col-xs-12">
-										<p class="one-line title">
-											<a href="offer-details.html">
-												عرض خاص لشهر أيار
-											</a>
-										</p>
-										<!-- Star rating -->
-										<div class="star-rating">
-											<input id="star-5" type="radio" name="rating-35" value="star-5" disabled>
-											<label for="star-5" title="5 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-4" type="radio" name="rating-35" value="star-4"  disabled>
-											<label for="star-4" title="4 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-3" type="radio" name="rating-35" value="star-3" checked disabled>
-											<label for="star-3" title="3 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-2" type="radio" name="rating-35" value="star-2" disabled>
-											<label for="star-2" title="2 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-1" type="radio" name="rating-35" value="star-1" disabled>
-											<label for="star-1" title="1 star">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-										</div>
-										<!-- ./Star rating -->
-										<span class="city">
-											<i class="flaticon-signs-1"></i> 
-											الرياض
-										</span>
-										<span class="duration">
-											<i class="flaticon-interface-2"></i> 
-											ينتهي خلال يوم
-										</span>
-										<span class="sall">
-											<i class="flaticon-commerce-and-shopping"></i> 
-											 الشراء: 4 مرات
-										</span>
-										<span class="price">
-											<del>300SAR</del>
-											225SAR
-										</span>
-										<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-									</div>
-								</div>
-							</div>
-							
-							<div class="item">
-								<div class="single-block">
-									<div class="col-sm-4 col-xs-12">
-										<div class="img-zoom">
-											<a href="offer-details.html">
-												<img src="images/zoomslider/05.jpg" class="img-responsive">
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-8 col-xs-12">
-										<p class="one-line title">
-											<a href="offer-details.html">
-												عرض خاص لشهر أيار
-											</a>
-										</p>
-										<!-- Star rating -->
-										<div class="star-rating">
-											<input id="star-5" type="radio" name="rating-36" value="star-5" disabled>
-											<label for="star-5" title="5 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-4" type="radio" name="rating-36" value="star-4"  disabled>
-											<label for="star-4" title="4 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-3" type="radio" name="rating-36" value="star-3" checked disabled>
-											<label for="star-3" title="3 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-2" type="radio" name="rating-36" value="star-2" disabled>
-											<label for="star-2" title="2 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-1" type="radio" name="rating-36" value="star-1" disabled>
-											<label for="star-1" title="1 star">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-										</div>
-										<!-- ./Star rating -->
-										<span class="city">
-											<i class="flaticon-signs-1"></i> 
-											الرياض
-										</span>
-										<span class="duration">
-											<i class="flaticon-interface-2"></i> 
-											ينتهي خلال يوم
-										</span>
-										<span class="sall">
-											<i class="flaticon-commerce-and-shopping"></i> 
-											 الشراء: 4 مرات
-										</span>
-										<span class="price">
-											<del>300SAR</del>
-											225SAR
-										</span>
-										<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-									</div>
-								</div>
-							</div>
-	
+							<?}?>
 							<h3>آخر المدونات</h3>
-	
+
 							<a class="single-blog" href="blog-details.html">
 								<div class="col-sm-4 col-xs-12">
-									<img src="images/zoomslider/06.jpg" class="img-responsive" alt="">
+									<img src="assets/images/zoomslider/04.jpg" class="img-responsive" alt="">
 								</div>
 								
 								<div class="col-sm-8 col-xs-12">
@@ -2285,10 +1548,10 @@
 									</p>
 								</div>
 							</a>
-	
+
 							<a class="single-blog" href="blog-details.html">
 								<div class="col-sm-4 col-xs-12">
-									<img src="images/zoomslider/07.jpg" class="img-responsive" alt="">
+									<img src="assets/images/zoomslider/05.jpg" class="img-responsive" alt="">
 								</div>
 								
 								<div class="col-sm-8 col-xs-12">
@@ -2301,10 +1564,10 @@
 									</p>
 								</div>
 							</a>
-	
+
 							<a class="single-blog" href="blog-details.html">
 								<div class="col-sm-4 col-xs-12">
-									<img src="images/zoomslider/06.jpg" class="img-responsive" alt="">
+									<img src="assets/images/zoomslider/05.jpg" class="img-responsive" alt="">
 								</div>
 								
 								<div class="col-sm-8 col-xs-12">
@@ -2317,10 +1580,10 @@
 									</p>
 								</div>
 							</a>
-	
+
 							<a class="single-blog" href="blog-details.html">
 								<div class="col-sm-4 col-xs-12">
-									<img src="images/zoomslider/07.jpg" class="img-responsive" alt="">
+									<img src="assets/images/zoomslider/06.jpg" class="img-responsive" alt="">
 								</div>
 								
 								<div class="col-sm-8 col-xs-12">
@@ -2333,115 +1596,13 @@
 									</p>
 								</div>
 							</a>
-	
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- ./Offer Details -->
-
-		<!-- Footer -->
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-3 col-xs-12">
-						<a href="index.html">
-							<img src="images/logo-white.png" class="img-responsive logo" alt="logo">
-						</a>
-					</div>
-					<div class="col-sm-9 col-xs-12 site-map">
-						<ul>
-							<li>
-								<a href="index.html">
-									الرئيسية
-									<span class="line"></span>
-								</a>
-							</li>
-							<li>
-								<a href="offers.html">
-									العروض
-									<span class="line"></span>
-								</a>
-							</li>
-							<li>
-								<a href="boss-speech.html">
-									كلمة الرئيس
-									<span class="line"></span>
-								</a>
-							</li>
-							<li>
-								<a href="printed.html">
-									الدليل المطبوع
-									<span class="line"></span>
-								</a>
-							</li>
-							<li>
-								<a href="blog-main-sections.html">
-									المدونة
-									<span class="line"></span>
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a href="about-us.html">
-									من نحن
-									<span class="line"></span>
-								</a>
-							</li>
-							<li>
-								<a href="conditions.html">
-									الشروط والأحكام
-									<span class="line"></span>
-								</a>
-							</li>
-							<li>
-								<a href="contact.html">
-									تواصل معنا
-									<span class="line"></span>
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a href="#">
-									<img src="images/app-store.svg" class="img-responsive">
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<img src="images/play-store.svg" class="img-responsive">
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-xs-12 socail">
-						<ul>
-							<li><a href=""><i class="flaticon-logo"></i> </a></li>
-							<li><a href=""><i class="flaticon-brands-and-logotypes-1"></i> </a></li>
-							<li><a href=""><i class="flaticon-brands-and-logotypes"></i> </a></li>
-						</ul>
-					</div>
-					<div class="col-12">
-                        <p class="share-copyrights">
-                            Powered by: 
-                            <a target="_blank" href="http://share.net.sa/">
-                                <img src="images/share-logo.png">
-                            </a>
-                        </p>
-                    </div>
-				</div>
-			</div>
-		</footer>
-		<!-- ./Footer -->
-	
-		<script src="js/jquery-2.1.4.js"></script>
-		<script src="js/bootstrap-arabic.min.js"></script>
-		<script src="js/flickity.pkgd.min.js"></script>
-		<script src="js/modernizr-2.6.2.min.js"></script>
-		<script src="js/jquery.zoomslider.min.js"></script>
-		<script src="js/all.js"></script>
-		<script src="js/plugin.js"></script>
-	</body>
-</html>
+<?php 
+include 'footer.php';
+?>
