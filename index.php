@@ -14,157 +14,43 @@ include 'header.php';
 					</div>
 					<div class="chices-block three-cols">
 						<ul>
+							<?php 
+							$get_sections = $engine->get_query("SELECT * FROM `ssections` ORDER BY `id` LIMIT 6");
+							while($show_sections = $get_sections->fetch_array()){?> 
 							<li>
-								<p class="title">
-									<i class="flaticon-holidays"></i>
-									<span class="word">قاعات الزفاف</span>
+								<p class="title"> 
+									<img src="<?=$show_sections['img']?>" style="width: 25px;">
+									<span class="word"><?=$show_sections['name']?></span>
 									<span class="line"></span>
 								</p>
 							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-transport"></i>
-									<span class="word">فنادق</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-monuments"></i>
-									<span class="word">قصور الافراح</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-food-and-restaurant"></i>
-									<span class="word">الاستراحات</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-tools-and-utensils-1"></i>
-									<span class="word">المطاعم</span>
-									<span class="line"></span>
-								</p>
-							</li>
+							<?}?>
 						</ul>
 						<ul>
+							<?php 
+							$get_sections = $engine->get_query("SELECT * FROM `ssections` ORDER BY `id` LIMIT 6,12");
+							while($show_sections = $get_sections->fetch_array()){?> 
 							<li>
-								<p class="title">
-									<i class="flaticon-people"></i>
-									<span class="word">فستان الزفاف</span>
+								<p class="title"> 
+									<img src="<?=$show_sections['img']?>" style="width: 25px;">
+									<span class="word"><?=$show_sections['name']?></span>
 									<span class="line"></span>
 								</p>
 							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-love"></i>
-									<span class="word">خواتم ومجوهرات الزفاف</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-elegante"></i>
-									<span class="word">فساتين سهرة وخطوبة</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-clothing"></i>
-									<span class="word">عبايات</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-brushes"></i>
-									<span class="word">الشعر والمكياج</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-art"></i>
-									<span class="word">نقش حناء</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-beauty-treatment"></i>
-									<span class="word">مراكز تجميل وعناية بالبشرة</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-xmas"></i>
-									<span class="word">توزيعات الافراح والمناسبات</span>
-									<span class="line"></span>
-								</p>
-							</li>
+							<?}?>
 						</ul>
 						<ul>
+							<?php 
+							$get_sections = $engine->get_query("SELECT * FROM `ssections` ORDER BY `id` LIMIT 6,18");
+							while($show_sections = $get_sections->fetch_array()){?> 
 							<li>
-								<p class="title">
-									<i class="flaticon-interface-1"></i>
-									<span class="word">التصوير الفوتوغرافي والفيديو</span>
+								<p class="title"> 
+									<img src="<?=$show_sections['img']?>" style="width: 25px;">
+									<span class="word"><?=$show_sections['name']?></span>
 									<span class="line"></span>
 								</p>
 							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-transport-2"></i>
-									<span class="word">سيارة الزفة</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-communications"></i>
-									<span class="word">دعوة زواج</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-cook"></i>
-									<span class="word">كيك الزفاف</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-flags"></i>
-									<span class="word">كوش وتنسيق حفلات</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-food-1"></i>
-									<span class="word">بوفيه مفتوح وضيافة</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-love-and-romance"></i>
-									<span class="word">زهور الزفاف</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<i class="flaticon-musical"></i>
-									<span class="word">زفات و دي جي</span>
-									<span class="line"></span>
-								</p>
-							</li>
+							<?}?>
 						</ul>
 					</div>
 				</div>
@@ -209,9 +95,9 @@ include 'header.php';
 						</ul>
 					</div>
 				</div>
-				<form>
-					<input type="hidden" class="type" value="قاعات زفاف">
-					<input type="hidden" class="city" value="الرياض">
+				<form action="offsection">
+					<input type="hidden" name="section" class="type">
+					<input type="hidden" name="city" class="city">
 					<button type="submit">بحث</button>
 				</form>
 			</div>
@@ -408,21 +294,30 @@ include 'header.php';
 				اكتشف العروض 
 				<img src="assets/images/icons/heart.svg" class="heart" alt="">
 			</h2>
-
-			<h3 class="sub-title">قاعات زفاف</h3>
+			<?php 
+			$get_by_Section = $engine->get_query("SELECT DISTINCT `section` FROM `offers`");
+			while($show_section   = $get_by_Section->fetch_array()){?>
+			<h3 class="sub-title"><?=$show_section['section']?></h3>
 			
 			<div class="main-carousel">
-							
+				<?php 
+				$section   = $show_section['section'];
+				$get_offer = $engine->get_query("SELECT * FROM `offers` WHERE `section` = '$section'");
+				while($show_offer = $get_offer->fetch_array()){?>		
 				<div class="item">
 					<div class="single-block">
 						<div class="img-zoom">
 							<a href="offer-details.html">
-								<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
+								<?php 
+								$get_img = $engine->get_photos($show_offer['pid']);
+								$show_img = $get_img->fetch_array();
+								?> 
+								<img src="<?=$show_img['img']?>" class="img-responsive">
 							</a>
 						</div>
 						<p class="one-line title">
-							<a href="offer-details.html">
-								عرض خاص لشهر أيار
+							<a href="<?=$show_offer['pid']?>">
+								<?=$show_offer['name']?>
 							</a>
 						</p>
 						<!-- Star rating -->
@@ -451,649 +346,31 @@ include 'header.php';
 						<!-- ./Star rating -->
 						<span class="city">
 							<i class="flaticon-signs-1"></i> 
-							الرياض
+							<?=$show_offer['city']?>
 						</span>
 						<span class="duration">
 							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
+							ينتهي: <?=counttime($show_offer['edate'])?>
 						</span>
 						<span class="sall">
 							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
+							 الشراء: <?=$show_offer['visits']?> مرات
 						</span>
 						<span class="price">
-							<del>300SAR</del>
-							225SAR
+							<del><?=$show_offer['oldprice']?>SAR</del>
+							<?=$show_offer['newprice']?>SAR
 						</span>
-						<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
+						<?php 
+						if($engine->isfav($show_offer['pid'])){?>
+						<button class="favourite-btn done" onclick="addto_fav('<?=$show_offer['pid']?>','del')"><i class="flaticon-love-and-romance-1"></i> </button>
+						<?}else{?>
+						<button class="favourite-btn" onclick="addto_fav('<?=$show_offer['pid']?>','add')"><i class="flaticon-love-and-romance-1"></i> </button>
+						<?}?>
 					</div>
 				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-7" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-7" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-7" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-7" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-7" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-8" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-8" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-8" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-8" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-8" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-9" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-9" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-9" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-9" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-9" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-10" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-10" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-10" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-10" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-10" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-11" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-11" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-11" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-11" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-11" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
+				<?}?>
 			</div>
-
-			<h3 class="sub-title">التصوير</h3>
-			
-			<div class="main-carousel">
-							
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-12" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-12" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-12" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-12" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-12" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-13" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-13" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-13" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-13" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-13" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/06.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-14" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-14" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-14" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-14" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-14" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-15" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-15" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-15" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-15" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-15" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-16" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-16" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-16" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-16" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-16" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-				<div class="item">
-					<div class="single-block">
-						<div class="img-zoom">
-										<a href="offer-details.html">
-											<img src="assets/images/zoomslider/07.jpg" class="img-responsive">
-										</a>
-									</div>
-									<p class="one-line title">
-										<a href="offer-details.html">
-											عرض خاص لشهر أيار
-										</a>
-									</p>
-						<!-- Star rating -->
-						<div class="star-rating">
-							<input id="star-5" type="radio" name="rating-17" value="star-5" disabled>
-							<label for="star-5" title="5 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-4" type="radio" name="rating-17" value="star-4"  disabled>
-							<label for="star-4" title="4 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-3" type="radio" name="rating-17" value="star-3" checked disabled>
-							<label for="star-3" title="3 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-2" type="radio" name="rating-17" value="star-2" disabled>
-							<label for="star-2" title="2 stars">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-							<input id="star-1" type="radio" name="rating-17" value="star-1" disabled>
-							<label for="star-1" title="1 star">
-									<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-							</label>
-						</div>
-						<!-- ./Star rating -->
-						<span class="city">
-							<i class="flaticon-signs-1"></i> 
-							الرياض
-						</span>
-						<span class="duration">
-							<i class="flaticon-interface-2"></i> 
-							ينتهي خلال يوم
-						</span>
-						<span class="sall">
-							<i class="flaticon-commerce-and-shopping"></i> 
-							 الشراء: 4 مرات
-						</span>
-						<span class="price">
-							<del>300SAR</del>
-							225SAR
-						</span>
-						<button class="favourite-btn done"><i class="flaticon-love-and-romance-1"></i> </button>
-					</div>
-				</div>
-
-			</div>
-
-			
+			<?}?>			
 			<div class="col-xs-12 ads-block">
 				<a href="#">
 					<img src="assets/images/ads.jpg" class="img-responsive">
