@@ -107,6 +107,9 @@ RewriteRule ^dashboard/employee dashboard/employee.php
 RewriteRule ^dashboard/sub_merch dashboard/sub_merch.php
 RewriteRule ^dashboard/privacy dashboard/privacy.php
 RewriteRule ^dashboard/inner_baner dashboard/inbaner.php
+RewriteRule ^dashboard/blog_sections dashboard/bsections.php
+RewriteRule ^dashboard/blog_ssections dashboard/bssections.php
+RewriteRule ^dashboard/blogs dashboard/blogs.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 </ifModule>

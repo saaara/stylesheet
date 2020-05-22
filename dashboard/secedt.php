@@ -28,19 +28,19 @@ $show  = $q->fetch_array();
                                 <input type="text" value="<?=$show['name']?>" name="name" class="form-control" placeholder="">
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
-                                <label>الترتيب</label> 
-                                <input type="text" name="rank" value="<?=$show['rank']?>" class="form-control" placeholder="">
+                                <label>الأيقونة</label> 
+                                <input type="text" name="img" value="<?=$show['img']?>" class="form-control" placeholder="">
                             </div>
                         </div>
-                        <div class="form-group col-md-12">
+                        <!-- <div class="form-group col-md-12">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <label>أيقونة القسم</label>
                                 <div class="col-md-12 row">
                                     <div class=" col-md-8">
                                         <div id="err1"></div>
                                         <div id="msg1">
-                                            <img src="<?=$show['img']?>"/>
-                                            <input type="hidden" name="img" value="<?=$show['img']?>">
+                                            <img src=""/>
+                                            <input type="hidden" name="img" value="">
                                         </div>      
                                     </div>
                                     <div class="btn p-type btn-file col-md-4">
@@ -49,7 +49,7 @@ $show  = $q->fetch_array();
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </form>
                     <div class="form-group col-md-12">
                         <div class="col-md-12 col-sm-12 col-xs-12">

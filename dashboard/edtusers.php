@@ -63,7 +63,14 @@ $engine->permissions(1,1,0,0);
                             </div>
                         </div>
                         <?}
-                        else{?>
+                        else if($show['rank'] == 2){?>
+                        <div class="form-group col-md-12">
+                            <input type="hidden" name="active" required="required" class="form-control col-md-12 col-xs-12" autocomplete="off">
+                            <input type="hidden" name="text" required="required" class="form-control col-md-12 col-xs-12" autocomplete="off">
+                            <input type="hidden" name="ratio" required="required" class="form-control col-md-12 col-xs-12" autocomplete="off">
+                            </div>
+                        </div>   
+                        <?}else{?>
                         <div class="form-group col-md-12">
                             <div class="item col-md-4 col-sm-12 col-xs-12">
                                 <label>الرصيد</label>

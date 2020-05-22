@@ -2,7 +2,16 @@
 include 'header.php';
 ?>
 	<!-- Slider -->
-	<div class="main-bg"  id="demo-1" data-zs-src='["assets/images/zoomslider/07.jpg", "assets/images/zoomslider/02.jpg", "assets/images/zoomslider/03.jpg"]' data-zs-overlay="dots">
+	<?php 
+	$get_slider = $engine->get_query("SELECT * FROM `slides`");
+	$slides;
+	while($show_slides = $get_slider->fetch_array())
+	{
+		$slides = '"'.$show_slides['img'].'",'.$slides;
+		$slides = rtrim($slides, ",");
+	}
+	?>
+	<div class="main-bg"  id="demo-1" data-zs-src='[<?=$slides?>]' data-zs-overlay="dots">
 		<div class="search-block">
 			<h2>حقق عرسك الأسطوري مع القفص الذهبي</h2>
 			<small>جميع الخيارات بين يديك</small>
@@ -19,7 +28,7 @@ include 'header.php';
 							while($show_sections = $get_sections->fetch_array()){?> 
 							<li>
 								<p class="title"> 
-									<img src="<?=$show_sections['img']?>" style="width: 25px;">
+									<i class="fa fa-<?=$show_sections['img']?>"></i>
 									<span class="word"><?=$show_sections['name']?></span>
 									<span class="line"></span>
 								</p>

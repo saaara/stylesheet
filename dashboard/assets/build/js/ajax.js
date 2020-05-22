@@ -512,9 +512,11 @@ function ffield(fld,data)
 
 function add_news(type,id='')
 {
-        var name  = document.forms["add-news"]["name"].value;
-        var txt   = document.forms["add-news"]["txt"].value;
-        var Xreq   = new XMLHttpRequest();
+        var name  = document.forms["form"]["name"].value;
+        var desc  = document.forms["form"]["desc"].value;
+        var sec   = document.forms["form"]["sec"].value;
+        var img   = document.forms["form"]["img"].value;
+        var Xreq  = new XMLHttpRequest();
         Xreq.onreadystatechange = function()
         {
             if(this.readyState < 4 )
@@ -535,7 +537,7 @@ function add_news(type,id='')
                 }
             }
         }
-        Xreq.open("GET","update.php?req=add_news&n="+name+"&txt="+txt+"&type="+type+"&id="+id,true);
+        Xreq.open("GET","update.php?req=add_news&name="+name+"&txt="+desc+"&sec="+sec+"&img="+img+"&type="+type+"&id="+id,true);
         // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
         Xreq.send();
 }
@@ -1105,13 +1107,21 @@ function rnk(type,id)
         Xreq.onreadystatechange = function()
         {
             if(this.readyState < 4 )
-            {
-                document.getElementById('users'+id).innerHTML = '<div class="ldng"><i class="fa fa-refresh fa-spin"></i></div>';
+            {  
+                loading();
             }
             else if(this.readyState == 4  & this.status == 200)
             {
-                document.getElementById('users'+id).innerHTML = this.responseText;
-
+                var response  = JSON.parse(this.responseText);
+                if(response['status'] == 1)
+                {
+                    salert("عملية ناجحة!",response['details'],"success","");
+                    refresh_content();
+                }
+                else
+                {
+                    salert("عفواً",response['details'],"error","إعادة المحاولة");
+                }
             }
         }
         Xreq.open("GET","update.php?req=rnk&type="+type+"&id="+id,true);
@@ -1312,6 +1322,65 @@ function add_subsection(type,id='')
         }
     }
     Xreq.open("GET","update.php?req=add_subsection&name="+name+"&msec="+msec+"&img="+img+"&type="+type+"&id="+id,true);
+    // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
+    Xreq.send();
+}
+function add_bsection(type,id='')
+{
+    var name    = document.forms["add-pro"]["name"].value;
+    var img     = document.forms["add-pro"]["img"].value;
+    var Xreq    = new XMLHttpRequest();
+    Xreq.onreadystatechange = function()
+    {
+        if(this.readyState < 4 )
+        {  
+            loading();
+        }
+        else if(this.readyState == 4  & this.status == 200)
+        {
+            var response  = JSON.parse(this.responseText);
+            if(response['status'] == 1)
+            {
+                salert("عملية ناجحة!",response['details'],"success","");
+                refresh_content();
+            }
+            else
+            {
+                salert("عفواً",response['details'],"error","إعادة المحاولة");
+            }
+        }
+    }
+    Xreq.open("GET","update.php?req=add_bsection&name="+name+"&type="+type+"&id="+id+"&img="+img,true);
+    // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
+    Xreq.send();
+}
+function add_bsubsection(type,id='')
+{
+    var name    = document.forms["add-pro"]["name"].value;
+    var msec    = document.forms["add-pro"]["msec"].value;
+    var img     = document.forms["add-pro"]["img"].value;
+    var Xreq    = new XMLHttpRequest();
+    Xreq.onreadystatechange = function()
+    {
+        if(this.readyState < 4 )
+        {  
+            loading();
+        }
+        else if(this.readyState == 4  & this.status == 200)
+        {
+            var response  = JSON.parse(this.responseText);
+            if(response['status'] == 1)
+            {
+                salert("عملية ناجحة!",response['details'],"success","");
+                refresh_content();
+            }
+            else
+            {
+                salert("عفواً",response['details'],"error","إعادة المحاولة");
+            }
+        }
+    }
+    Xreq.open("GET","update.php?req=add_bsubsection&name="+name+"&msec="+msec+"&img="+img+"&type="+type+"&id="+id,true);
     // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
     Xreq.send();
 }

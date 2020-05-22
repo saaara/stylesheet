@@ -18,7 +18,7 @@ include 'sub_header.php';
 							while($show_section = $get_sections->fetch_array()){?>
 							<div class="col-sm-3 col-xs-12">
 								<a href="offsection?section=<?=$show_section['name']?>" class="offer-section">
-									<img src="<?=$show_section['img']?>" style="object-fit: scale-down;width: 100%;height: 70px;"/>
+									<i style="font-size:30px;" class="fa fa-<?=$show_section['img']?>"></i>
 									<p><?=$show_section['name']?></p>
 								</a>
 							</div>

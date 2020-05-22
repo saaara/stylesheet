@@ -159,6 +159,16 @@ if(isset($_POST['sout']))
                                     <?}?>
                                 </ul>
                             </li>
+                            <li>
+                                <a>
+                                    <i class="fa fa-align-right"></i> المقالات <span class="fa fa-chevron-down"></span>
+                                </a>
+                                <ul class="nav child_menu">
+                                    <li><a href="blog_sections">الأقسام الرئيسية</a></li> 
+                                    <li><a href="blog_ssections">الأقسام الفرعية</a></li>
+                                    <li><a href="blogs">المقالات</a></li>
+                                </ul>
+                            </li>
                             <?if(USER_RANK == 1){?>
                             <li>
                                 <a>

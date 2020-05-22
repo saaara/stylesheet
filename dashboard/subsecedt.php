@@ -23,11 +23,11 @@ $show  = $q->fetch_array();
                 <div class="x_content"> 
                     <form name="add-pro">
                         <div class="form-group col-md-12">
-                            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
                                 <label>اسم القسم</label>
                                 <input type="text" value="<?=$show['name']?>" name="name" class="form-control" placeholder="">
                             </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
                                 <label>القسم الرئيسي</label>
                                 <select name="msec" class="form-control">
                                     <option value="<?=$show['msec']?>"><?=$show['msec']?></option>
@@ -39,6 +39,10 @@ $show  = $q->fetch_array();
                                     <option value="<?=$show['name']?>"><?=$show['name']?></option>
                                     <?}?>
                                 </select>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <label>الأيقونة</label> 
+                                <input type="text" name="img" value="<?=$show['img']?>" class="form-control" placeholder="">
                             </div>
                         </div>
                     </form>

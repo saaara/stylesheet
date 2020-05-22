@@ -284,18 +284,21 @@ else if($wut == "addresses")
 else if($wut == "add_news")
 {
 	$type   = $_REQUEST['type'];
-	$name   = $_REQUEST['n'];
+	$name   = $_REQUEST['name'];
 	$txt    = $_REQUEST['txt'];
-	$id      = $_REQUEST['id'];
-	if(!empty($name) && !empty($txt))
+	$sec    = $_REQUEST['sec'];
+	$img    = $_REQUEST['img'];
+	$date   = date('Y-m-d');
+	$id     = $_REQUEST['id'];
+	if(!empty($name) && !empty($txt) && !empty($sec) && !empty($img))
 	{
 		if($type == 'add')
 		{
-			$q       = "INSERT IGNORE INTO `newsfeed` SET `title` = '$name' , `txt` = '$txt'";
+			$q       = "INSERT IGNORE INTO `news` SET `title` = '$name' , `text` = '$txt', `section` = '$sec', `img` = '$img', `date` = '$date'";
 		}
 		if($type == 'update')
 		{
-			$q       = "UPDATE `newsfeed` SET `title` = '$name' , `txt` = '$txt'";
+			$q       = "UPDATE `newsfeed` SET `title` = '$name' , `text` = '$txt', `section` = '$sec', `img` = '$img', `date` = '$date' WHERE `id` = '$id'";
 		}
 		$smd     = $engine->connect()->query($q);
 		if($smd)
@@ -1376,6 +1379,67 @@ else if($wut == "add_subsection")
 		else if($type == 'update')
 		{
 			$q       = "UPDATE `ssections` SET `name` = '$name', `msec` = '$msec', `img` = '$img' WHERE `id` = '$id'";
+		}
+		$smd     = $engine->connect()->query($q) or die("ERROR");
+		if($smd)
+		{
+			
+			$results = array('status' => 1, 'details' => 'تمت الإضافة بنجاح');
+		}
+	}
+	else
+	{
+		
+		$results = array('status' => 0, 'details' => 'عفواً لا يجب أن تترك أي حقول فارغة');
+	}
+	echo $results = json_encode($results);
+}
+else if($wut == "add_bsection")
+{
+	$name    = $_REQUEST['name'];
+	$img     = $_REQUEST['img'];
+	$type    = $_REQUEST['type'];
+	$id      = $_REQUEST['id'];
+	if(!empty($name))
+	{
+		if($type == 'add')
+		{
+			$q       = "INSERT INTO `blog_sections` (`name`, `img`,`type`) VALUES ('$name', '$img','main')";
+		}
+		else if($type == 'update')
+		{
+			$q       = "UPDATE `blog_sections` SET `name`= '$name', `img` = '$img' WHERE `id` = '$id'";
+		}
+		$smd     = $engine->connect()->query($q) or die("ERROR");
+		if($smd)
+		{
+			
+			$results = array('status' => 1, 'details' => 'تمت الإضافة بنجاح');
+		}
+	}
+	else
+	{
+		
+		$results = array('status' => 0, 'details' => 'عفواً لا يجب أن تترك أي حقول فارغة');
+	}
+	echo $results = json_encode($results);
+}
+else if($wut == "add_bsubsection")
+{
+	$name    = $_REQUEST['name'];
+	$msec    = $_REQUEST['msec'];
+	$img     = $_REQUEST['img'];
+	$type    = $_REQUEST['type'];
+	$id      = $_REQUEST['id'];
+	if(!empty($name)&& !empty($msec))
+	{
+		if($type == 'add')
+		{
+			$q       = "INSERT INTO `blog_sections` (`name`,`msection`,`img`,`type`) VALUES ('$name','$msec','$img','sub')";
+		}
+		else if($type == 'update')
+		{
+			$q       = "UPDATE `blog_sections` SET `name` = '$name', `msection` = '$msec', `img` = '$img' WHERE `id` = '$id'";
 		}
 		$smd     = $engine->connect()->query($q) or die("ERROR");
 		if($smd)

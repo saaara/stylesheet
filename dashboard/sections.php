@@ -20,12 +20,16 @@ $engine->permissions(1,0,0,0);
                 <div class="x_content"> 
                     <form name="add-pro">
                         <div class="form-group col-md-12">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                                 <label>اسم القسم</label> 
                                 <input type="text" name="name" class="form-control" placeholder="">
                             </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <label>الأيقونة</label> 
+                                <input type="text" name="img" class="form-control" placeholder="مثال: cogs">
+                            </div>
                         </div>
-                        <div class="form-group col-md-12">
+                        <!-- <div class="form-group col-md-12">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <label>أيقونة القسم</label>
                                 <div class="col-md-12 row">
@@ -39,7 +43,7 @@ $engine->permissions(1,0,0,0);
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </form>
                     <div class="form-group col-md-12">
                         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -84,7 +88,7 @@ $engine->permissions(1,0,0,0);
                             <tr id="sections<?=$showrc['id']?>">
                                 <th><?=$showrc['id']?></th>
                                 <th><?=$showrc['name']?></th>
-                                <th><img class="circle" style="width:110px;" src="<?=$showrc['img']?>"/></th>
+                                <th><i class="fa fa-<?=$showrc['img']?>" style="font-size: 22px;"></th>
                                 <th>
                                     <button class="btn btn-danger btn-flat" onclick="del('sections','<?=$showrc[id]?>')"><i class="fa fa-trash"></i>
                                     </button>
