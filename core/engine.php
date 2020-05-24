@@ -756,20 +756,14 @@ class engine
 		}
 	}// enbd send mail
 
-	function rate($num,$type="")
+	function rate($pid)
 	{
-		if($type == 'grate')
-		{
-			$pid = $num;
-			$qr    = "SELECT * FROM `comments` WHERE (`to` = '$pid' AND `status` = 1)";
-			$smdr  = $this->connect()->query($qr);
-			$showr = $smdr->fetch_array();
-			$num   = $showr['rate'];
-		}
-		else
-		{
-			$num = $num;
-		}
+		
+		$qr    = "SELECT * FROM `comments` WHERE (`to` = '$pid' AND `status` = 1)";
+		$smdr  = $this->connect()->query($qr);
+		$showr = $smdr->fetch_array();
+		$num   = $showr['rate'];
+
 		if($num == 0)
 		{
 			echo"

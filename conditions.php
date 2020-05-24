@@ -101,69 +101,25 @@ include 'sub_header.php';
 
 						<h3>آخر المدونات</h3>
 
-						<a class="single-blog" href="blog-details.html">
+						<?php 
+						$get_articles = $engine->get_query("SELECT * FROM `news`");
+						while($show_articles = $get_articles->fetch_array()){?>
+						<a href="show_article?article=<?=$show_article['id']?>" class="single-blog">
 							<div class="col-sm-4 col-xs-12">
-								<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
+								<img src="<?=$show_article['img']?>" class="img-responsive" alt="">
 							</div>
 							
 							<div class="col-sm-8 col-xs-12">
 								<span class="section">
 									<i class="flaticon-miscellaneous"></i> 
-									علماء
+									<?=$show_article['section']?>
 								</span>
 								<p class="two-line">
-									هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
+									<?=$show_article['title']?>
 								</p>
 							</div>
 						</a>
-
-						<a class="single-blog" href="blog-details.html">
-							<div class="col-sm-4 col-xs-12">
-								<img src="assets/images/zoomslider/05.jpg" class="img-responsive" alt="">
-							</div>
-							
-							<div class="col-sm-8 col-xs-12">
-								<span class="section">
-									<i class="flaticon-miscellaneous"></i> 
-									علماء
-								</span>
-								<p class="two-line">
-									هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-								</p>
-							</div>
-						</a>
-
-						<a class="single-blog" href="blog-details.html">
-							<div class="col-sm-4 col-xs-12">
-								<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
-							</div>
-							
-							<div class="col-sm-8 col-xs-12">
-								<span class="section">
-									<i class="flaticon-miscellaneous"></i> 
-									علماء
-								</span>
-								<p class="two-line">
-									هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-								</p>
-							</div>
-						</a>
-
-						<a class="single-blog" href="blog-details.html">
-							<div class="col-sm-4 col-xs-12">
-								<img src="assets/images/zoomslider/06.jpg" class="img-responsive" alt="">
-							</div>
-							
-							<div class="col-sm-8 col-xs-12">
-								<span class="section">
-									<i class="flaticon-miscellaneous"></i> 
-									علماء
-								</span>
-								<p class="two-line">
-									هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-								</p>
-							</div>
-						</a>
+						<?}?>
 
 					</div>
 				</div>

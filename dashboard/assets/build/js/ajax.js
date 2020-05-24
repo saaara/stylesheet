@@ -695,6 +695,8 @@ function add_offer(type,req,pid='')
         var edate       = document.forms["add-pro"]["enddate"].value;
         var rstatus     = document.forms["add-pro"]["rstatus"].value;
         var cities      = document.forms["add-pro"]["cities"].value;
+        var pranches    = document.forms["add-pro"]["pranches"].value;
+        var merchant    = document.forms["add-pro"]["merchant"].value;
         if(pid == '')
         {
             var pid         = document.forms["add-pro"]["pid"].value;
@@ -722,7 +724,7 @@ function add_offer(type,req,pid='')
         }
         Xreq.open("POST","update.php",true);
         Xreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        Xreq.send("req="+req+"&name="+name+"&price="+price+"&addet="+addet+"&desc="+desc+"&sec="+sec+"&tags="+tags+"&pid="+pid+"&type="+type+"&oldprice="+oprice+"&edate="+edate+"&date="+date+"&rstatus="+rstatus+"&cities="+cities);
+        Xreq.send("req="+req+"&name="+name+"&price="+price+"&addet="+addet+"&desc="+desc+"&sec="+sec+"&tags="+tags+"&pid="+pid+"&type="+type+"&oldprice="+oprice+"&edate="+edate+"&date="+date+"&rstatus="+rstatus+"&cities="+cities+"&pranches="+pranches+"&merchant="+merchant);
 }
 
 function add_ad(type,req,pid='')
@@ -1295,6 +1297,34 @@ function add_section(type,id='')
     // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
     Xreq.send();
 }
+function add_city(type,id='')
+{
+    var name    = document.forms["add-pro"]["name"].value;
+    var Xreq    = new XMLHttpRequest();
+    Xreq.onreadystatechange = function()
+    {
+        if(this.readyState < 4 )
+        {  
+            loading();
+        }
+        else if(this.readyState == 4  & this.status == 200)
+        {
+            var response  = JSON.parse(this.responseText);
+            if(response['status'] == 1)
+            {
+                salert("عملية ناجحة!",response['details'],"success","");
+                refresh_content();
+            }
+            else
+            {
+                salert("عفواً",response['details'],"error","إعادة المحاولة");
+            }
+        }
+    }
+    Xreq.open("GET","update.php?req=add_city&name="+name+"&type="+type+"&id="+id,true);
+    // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
+    Xreq.send();
+}
 function add_subsection(type,id='')
 {
     var name    = document.forms["add-pro"]["name"].value;
@@ -1412,6 +1442,40 @@ function add_sponser()
         }
     }
     Xreq.open("GET","update.php?req=add_sponser&name="+name+"&section="+section+"&img="+img+"&link="+link,true);
+    // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
+    Xreq.send();
+}
+function add_company()
+{
+    var name     = document.forms["companies"]["name"].value;
+    var ename    = document.forms["companies"]["ename"].value;
+    var merchant = document.forms["companies"]["merchant"].value;
+    var address  = document.forms["companies"]["address"].value;
+    var contact  = document.forms["companies"]["contact"].value;
+    var img      = document.forms["companies"]["img"].value;
+    var map      = document.forms["companies"]["map"].value;
+    var Xreq     = new XMLHttpRequest();
+    Xreq.onreadystatechange = function()
+    {
+        if(this.readyState < 4 )
+        {  
+            loading();
+        }
+        else if(this.readyState == 4  & this.status == 200)
+        {
+            var response  = JSON.parse(this.responseText);
+            if(response['status'] == 1)
+            {
+                salert("عملية ناجحة!",response['details'],"success","");
+                refresh_content();
+            }
+            else
+            {
+                salert("عفواً",response['details'],"error","إعادة المحاولة");
+            }
+        }
+    }
+    Xreq.open("GET","update.php?req=add_company&name="+name+"&ename="+ename+"&merchant="+merchant+"&address="+address+"&contact="+contact+"&img="+img+"&map="+map,true);
     // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
     Xreq.send();
 }

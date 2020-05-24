@@ -27,6 +27,8 @@ $engine->permissions(1,1,1,0);
                             <th>التاريخ</th>
                             <th>تاريخ الانتهاء</th>
                             <th>التاجر</th>
+                            <th>الفروع</th>
+                            <th>المدينة</th>
                             <th>خيارات</th>
                         </tr>
                         </thead>
@@ -59,8 +61,12 @@ $engine->permissions(1,1,1,0);
                             <th>
                                 <a href="users#users<?=$showu['id']?>" target="_blank"><?=$showu['name']?></a>
                             </th>
+                            <th><?=$show['pranches']?></th>
+                            <th><?=$show['city']?></th>
                             <th>
-                                <button class="btn btn-danger btn-flat" onclick="del('offers','<?=$show[pid]?>')"></i></button>
+                                <button class="btn btn-danger btn-flat" onclick="del('offers','<?=$show[pid]?>')">
+                                    <i class="fa fa-trash"></i>
+                                </button>
                                 <a href="eedit?edit=<?=$show['pid']?>" class="btn btn-success btn-flat"><i class="fa fa-edit"></i></a>
                             </th>
                         </tr>

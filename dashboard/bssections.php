@@ -96,7 +96,7 @@ $engine->permissions(1,0,0,0);
                             <tr id="ssections<?=$showrc['id']?>">
                                 <th><img class="circle" style="width:110px;" src="<?=$showrc['img']?>"/></th>
                                 <th><?=$showrc['name']?></th>
-                                <th><?=$showrc['msec']?></th>
+                                <th><?=$showrc['msection']?></th>
                                 <th>
                                     <button class="btn btn-danger btn-flat" onclick="del('blog_sections','<?=$showrc[id]?>')"><i class="fa fa-trash"></i>
                                     </button>

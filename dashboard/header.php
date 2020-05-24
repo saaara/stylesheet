@@ -134,10 +134,12 @@ if(isset($_POST['sout']))
                                     <li><a href="sliders">السلايدر</a></li>
                                     <li><a href="sections">الأقسام</a></li>
                                     <li><a href="sub_sections">الأقسام الفرعية</a></li>
+                                    <li><a href="cities">المدن</a></li>
+                                    <li><a href="merchants">التُجار</a></li>
+                                    <li><a href="sponsers">الرُعاة</a></li> 
                                     <?}?>
                                     <li><a href="users">المشترون</a></li>
-                                    <li><a href="sponsers">الرُعاة</a></li> 
-                                    <!-- <li><a href="merchants">التُجار</a></li> -->
+                                    <li><a href="companies">الشركات والفروع</a></li>
                                 </ul>
                             </li>
                             <?}?>

@@ -70,37 +70,16 @@ include 'header.php';
 					</div>
 					<div class="chices-block">
 						<ul>
+							<?php 
+							$get_citie = $engine->get_query("SELECT * FROM `cities`");
+							while($show_cities = $get_citie->fetch_array()){?>
 							<li>
 								<p class="title">
-									<span class="word">الرياض</span>
-									
+									<span class="word"><?=$show_cities['name']?></span>
 									<span class="line"></span>
 								</p>
 							</li>
-							<li>
-								<p class="title">
-									<span class="word">جدة</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<span class="word">مكة المكرمة</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<span class="word">المدينة المنورة</span>
-									<span class="line"></span>
-								</p>
-							</li>
-							<li>
-								<p class="title">
-									<span class="word">المنطقة الشرقية</span>
-									<span class="line"></span>
-								</p>
-							</li>
+							<?}?>
 						</ul>
 					</div>
 				</div>
@@ -151,63 +130,32 @@ include 'header.php';
 		<div class="container">
 			<h2 class="main-title">
 				<img src="assets/images/icons/cage.svg" class="cage" alt="">
-				قالوا عن الزواج
+				<?php 
+				$get_bsection = $engine->get_query("SELECT * FROM `blog_sections` WHERE `type` = 'sub' ORDER BY rand() LIMIT 1");
+				$show_bsection = $get_bsection->fetch_array();
+				$bsection  = $show_bsection['name'];
+				?>
+				<?=$bsection?>
 				<img src="assets/images/icons/heart.svg" class="heart" alt="">
 			</h2>
 			<div class="row">
-				
+				<?php 
+				$get_blogs = $engine->get_query("SELECT * FROM `news` WHERE `section` = '$bsection' ORDER BY `id` LIMIT 4");
+				while($show_blogs = $get_blogs->fetch_array()){?>
 				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
+					<a class="single-blog" href="show_article?article=<?=$show_blogs['id']?>">
+						<img src="<?=$show_blogs['img']?>" class="img-responsive" alt="">
 						<span class="section">
 							<i class="flaticon-miscellaneous"></i> 
-							علماء
+							<?=$show_blogs['section']?>
 						</span>
 						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
+							<?=$engine->limtxt(150,$show_blogs['text'])?>
 						</p>
 					</a>
 				</div>
-
-				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/02.jpg" class="img-responsive" alt="">
-						<span class="section">
-							<i class="flaticon-miscellaneous"></i> 
-							مشايخ
-						</span>
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-
-				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/03.jpg" class="img-responsive" alt="">
-						<span class="section">
-							<i class="flaticon-miscellaneous"></i> 
-							أدباء
-						</span>
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-
-				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
-						<span class="section">
-							<i class="flaticon-miscellaneous"></i> 
-							علماء
-						</span>
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-<!-- Ads -->
+				<?}?>
+				<!-- Ads -->
 				<div class="col-xs-12 ads-block">
 					<a href="#">
 						<img src="assets/images/ads.jpg" class="img-responsive">
@@ -225,63 +173,31 @@ include 'header.php';
 		<div class="container">
 			<h2 class="main-title">
 				<img src="assets/images/icons/cage.svg" class="cage" alt="">
-				استراحة المتزوجين 
+				<?php 
+				$get_bsection = $engine->get_query("SELECT * FROM `blog_sections` WHERE `type` = 'sub' ORDER BY rand() LIMIT 1");
+				$show_bsection = $get_bsection->fetch_array();
+				$bsection  = $show_bsection['name'];
+				?>
+				<?=$bsection?>
 				<img src="assets/images/icons/heart.svg" class="heart" alt="">
 			</h2>
 			<div class="row">
-				
+				<?php 
+				$get_blogs = $engine->get_query("SELECT * FROM `news` WHERE `section` = '$bsection' ORDER BY `id` LIMIT 4");
+				while($show_blogs = $get_blogs->fetch_array()){?>
 				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
+					<a class="single-blog" href="show_article?article=<?=$show_blogs['id']?>">
+						<img src="<?=$show_blogs['img']?>" class="img-responsive" alt="">
 						<span class="section">
 							<i class="flaticon-miscellaneous"></i> 
-							علماء
+							<?=$show_blogs['section']?>
 						</span>
 						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
+							<?=$engine->limtxt(150,$show_blogs['text'])?>
 						</p>
 					</a>
 				</div>
-
-				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/02.jpg" class="img-responsive" alt="">
-						<span class="section">
-							<i class="flaticon-miscellaneous"></i> 
-							مشايخ
-						</span>
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-
-				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/03.jpg" class="img-responsive" alt="">
-						<span class="section">
-							<i class="flaticon-miscellaneous"></i> 
-							أدباء
-						</span>
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-
-				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
-						<span class="section">
-							<i class="flaticon-miscellaneous"></i> 
-							علماء
-						</span>
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-
+				<?}?>
 				<!-- Ads -->
 				<div class="col-xs-12 ads-block">
 					<a href="#">
@@ -316,7 +232,7 @@ include 'header.php';
 				<div class="item">
 					<div class="single-block">
 						<div class="img-zoom">
-							<a href="offer-details.html">
+							<a href="<?=$show_offer['pid']?>">
 								<?php 
 								$get_img = $engine->get_photos($show_offer['pid']);
 								$show_img = $get_img->fetch_array();
@@ -395,47 +311,31 @@ include 'header.php';
 		<div class="container">
 			<h2 class="main-title">
 				<img src="assets/images/icons/cage.svg" class="cage" alt="">
-				 شهر العسل 
+				<?php 
+				$get_bsection = $engine->get_query("SELECT * FROM `blog_sections` WHERE `type` = 'sub' ORDER BY rand() LIMIT 1");
+				$show_bsection = $get_bsection->fetch_array();
+				$bsection  = $show_bsection['name'];
+				?>
+				<?=$bsection?>
 				<img src="assets/images/icons/heart.svg" class="heart" alt="">
 			</h2>
 			<div class="row">
-				
-				<div class="col-sm-3 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
+				<?php 
+				$get_blogs = $engine->get_query("SELECT * FROM `news` WHERE `section` = '$bsection' ORDER BY `id` LIMIT 4");
+				while($show_blogs = $get_blogs->fetch_array()){?>
+				<div class="col-lg-3 col-sm-6 col-xs-12">
+					<a class="single-blog" href="show_article?article=<?=$show_blogs['id']?>">
+						<img src="<?=$show_blogs['img']?>" class="img-responsive" alt="">
+						<span class="section">
+							<i class="flaticon-miscellaneous"></i> 
+							<?=$show_blogs['section']?>
+						</span>
 						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
+							<?=$engine->limtxt(150,$show_blogs['text'])?>
 						</p>
 					</a>
 				</div>
-
-				<div class="col-sm-3 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/02.jpg" class="img-responsive" alt="">
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-
-				<div class="col-sm-3 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/03.jpg" class="img-responsive" alt="">
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-
-				<div class="col-sm-3 col-xs-12">
-					<a class="single-blog" href="blog-details.html">
-						<img src="assets/images/zoomslider/06.jpg" class="img-responsive" alt="">
-						<p class="two-line">
-							هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-						</p>
-					</a>
-				</div>
-				
+				<?}?>
 				<!-- Ads -->
 				<div class="col-xs-12 ads-block">
 					<a href="#">

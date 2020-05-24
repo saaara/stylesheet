@@ -657,6 +657,8 @@ else if($wut == "add_offers")
 	$date      	= addslashes(htmlspecialchars($_REQUEST['date']));
 	$rstatus   	= addslashes(htmlspecialchars($_REQUEST['rstatus']));
 	$cities  	= addslashes(htmlspecialchars($_REQUEST['cities']));
+	$merchant  	= addslashes(htmlspecialchars($_REQUEST['merchant']));
+	$pranches  	= addslashes(htmlspecialchars($_REQUEST['pranches']));
 	$edate      = date('Y-m-d G:i:s', strtotime($edate));
 	$date       = date('Y-m-d G:i:s', strtotime($date));
 	$uid        = USER_ID;
@@ -672,11 +674,11 @@ else if($wut == "add_offers")
 	{
 		if($type == 'add')
 		{
-			$q       = "INSERT IGNORE INTO `offers` SET `pid` = '$pid', `name` = '$name', `uid` = '$uid', `section` = '$sec', `ad_det` = '$addet', `keys` = '$tags' , `desc` = '$desc' , `status` = '$status' , `oldprice` = '$price' , `newprice` = '$oldprice',`edate` = '$edate',`date` = '$date', `rstatus` = '$rstatus', `city` = '$cities'";
+			$q       = "INSERT IGNORE INTO `offers` SET `pid` = '$pid', `name` = '$name', `uid` = '$merchant', `section` = '$sec', `ad_det` = '$addet', `keys` = '$tags' , `desc` = '$desc' , `status` = '$status' , `oldprice` = '$price' , `newprice` = '$oldprice',`edate` = '$edate',`date` = '$date', `rstatus` = '$rstatus', `city` = '$cities', `pranches` = '$pranches'";
 		}
 		if($type == 'update')
 		{
-			$q       = "UPDATE `offers` SET `pid` = '$pid', `name` = '$name', `section` = '$sec', `ad_det` = '$addet', `keys` = '$tags' , `desc` = '$desc' , `status` = '$status' , `oldprice` = '$price' , `newprice` = '$oldprice',`edate` = '$edate',`date` = '$date', `rstatus` = '$rstatus', `city` = '$cities' WHERE `pid` = '$pid'";
+			$q       = "UPDATE `offers` SET `pid` = '$pid', `name` = '$name', `section` = '$sec', `ad_det` = '$addet', `keys` = '$tags' , `desc` = '$desc' , `status` = '$status' , `oldprice` = '$price' , `newprice` = '$oldprice',`edate` = '$edate',`date` = '$date', `rstatus` = '$rstatus', `city` = '$cities', `pranches` = '$pranches' WHERE `pid` = '$pid'";
 			
 		}
 		$smd     = $engine->connect()->query($q);
@@ -1363,6 +1365,35 @@ else if($wut == "add_section")
 	}
 	echo $results = json_encode($results);
 }
+else if($wut == "add_city")
+{
+	$name    = $_REQUEST['name'];
+	$type    = $_REQUEST['type'];
+	$id      = $_REQUEST['id'];
+	if(!empty($name))
+	{
+		if($type == 'add')
+		{
+			$q       = "INSERT INTO `cities` (`name`) VALUES ('$name')";
+		}
+		else if($type == 'update')
+		{
+			$q       = "UPDATE `cities` SET `name`= '$name' WHERE `id` = '$id'";
+		}
+		$smd     = $engine->connect()->query($q) or die("ERROR");
+		if($smd)
+		{
+			
+			$results = array('status' => 1, 'details' => 'تمت الإضافة بنجاح');
+		}
+	}
+	else
+	{
+		
+		$results = array('status' => 0, 'details' => 'عفواً لا يجب أن تترك أي حقول فارغة');
+	}
+	echo $results = json_encode($results);
+}
 else if($wut == "add_subsection")
 {
 	$name    = $_REQUEST['name'];
@@ -1756,4 +1787,32 @@ else if($wut == "g_name")
 	echo $results = json_encode($results);
 }
 
+else if($wut == "add_company")
+{
+	$name       = $_REQUEST['name'];
+	$ename      = $_REQUEST['ename'];
+	$merchant   = $_REQUEST['merchant'];
+	$address    = htmlentities($_REQUEST['address']);
+	$contact    = htmlentities($_REQUEST['contact']);
+	$img        = $_REQUEST['img'];
+	$map        = $_REQUEST['map'];
+	if(!empty($name) && !empty($ename) && !empty($merchant) && !empty($img))
+	{
+		
+		$q       = "INSERT IGNORE INTO `companies` SET `name` = '$name' , `ename` = '$ename' , `merchant` = '$merchant' , `address` = '$address' , `contact` = '$contact' , `img` = '$img',`place` = '$map'";
+		$smd     = $engine->connect()->query($q);
+		if($smd)
+		{
+			$results = array('status' => 1, 'details' => 'تم إضافة الفرع بنجاح');
+		}
+		else{
+			$results = array('status' => 0, 'details' => 'عفواً هناك خطأ 224');
+		}
+	}
+	else
+	{
+		$results = array('status' => 0, 'details' => 'عفواً لا يجب ترك الحقول فارغة');
+	}
+	echo $results = json_encode($results);
+}
 ?>

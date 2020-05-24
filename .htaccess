@@ -52,6 +52,7 @@ RewriteRule ^conditions conditions.php
 RewriteRule ^report report.php
 RewriteRule ^checkout payment.php
 RewriteRule ^activate activate.php
+RewriteRule ^show_article blog-details.php
 RewriteRule ^([0-9A-Za-z_-]+)$ show-offer.php?p=$1
 
 RewriteRule ^dashboard/home dashboard/index.php
@@ -65,6 +66,7 @@ RewriteRule ^dashboard/offers dashboard/offers.php
 RewriteRule ^dashboard/sponsers dashboard/sponsers.php
 RewriteRule ^dashboard/add_products dashboard/addproducts.php
 RewriteRule ^dashboard/track_products dashboard/tracker.php
+RewriteRule ^dashboard/companies dashboard/companies.php
 RewriteRule ^dashboard/comments dashboard/comments.php
 RewriteRule ^dashboard/pending_products dashboard/pproducts.php
 RewriteRule ^dashboard/pending_offers dashboard/poffers.php
@@ -110,6 +112,8 @@ RewriteRule ^dashboard/inner_baner dashboard/inbaner.php
 RewriteRule ^dashboard/blog_sections dashboard/bsections.php
 RewriteRule ^dashboard/blog_ssections dashboard/bssections.php
 RewriteRule ^dashboard/blogs dashboard/blogs.php
+RewriteRule ^dashboard/cities dashboard/add_city.php
+RewriteRule ^dashboard/city_edit dashboard/city_edit.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 </ifModule>

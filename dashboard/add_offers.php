@@ -2,6 +2,7 @@
 include 'header.php';
 $engine->permissions(1,1,1,0);
 $pid = md5(rand(0,999));
+$merchant = USER_ID;
 ?>
         
 <!-- page content -->
@@ -115,6 +116,45 @@ $pid = md5(rand(0,999));
                                 <input type="hidden" name="cities">
                                 <ul id="citiesli">
                                 </ul>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <label>الفروع التي يسري عليها العرض</label>
+                                <select name="spranches" class="form-control js-example-basic-single" onchange="s_pranch()">
+                                    <option disabled selected>اختر الفروع</option>
+                                    <?php
+                                    if(USER_RANK == 1)
+                                    {
+                                        $q = $engine->connect()->query("SELECT * FROM `companies`");
+                                    }
+                                    else
+                                    {
+                                        $merchant = USER_ID;
+                                        $q = $engine->connect()->query("SELECT * FROM `companies` WHERE `merchant` = '$merchant'");
+                                    }
+                                    while($showpr = $q->fetch_array()){?>
+                                    <option value="<?=$showpr['name']?>">
+                                        <?=$showpr['name']?>
+                                    </option> 
+                                    <?}?>
+                                </select>
+                                <input type="hidden" name="pranches">
+                                <small>يمكنك اختيار أكثر من فرع</small>
+                                <ul id="pranchesli">
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12">  
+                                <label>التاجر</label>
+                                <select class="form-control js-example-basic-single" name="merchant">
+                                    <?if(USER_RANK == 0){?>
+                                    <option value="<?=USER_ID?>"><?=USER_NAME?></option>
+                                    <?}else{
+                                    $get_merchants = $engine->get_query("SELECT * FROM `users` WHERE `rank` = '3'");
+                                    while($show_merchant = $get_merchants->fetch_array()){?>
+                                    <option value="<?=$show_merchant['id']?>"><?=$show_merchant['name']?></option>
+                                    <?}}?>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group col-md-12">

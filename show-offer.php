@@ -39,26 +39,7 @@ if(!isset($pid) || empty($pid) || $offers_num <= 0)
 								</p>
 								<!-- Star rating -->
 								<div class="star-rating">
-									<input id="star-5" type="radio" name="rating-20" value="star-5" disabled>
-									<label for="star-5" title="5 stars">
-											<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-									</label>
-									<input id="star-4" type="radio" name="rating-20" value="star-4"  disabled>
-									<label for="star-4" title="4 stars">
-											<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-									</label>
-									<input id="star-3" type="radio" name="rating-20" value="star-3" checked disabled>
-									<label for="star-3" title="3 stars">
-											<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-									</label>
-									<input id="star-2" type="radio" name="rating-20" value="star-2" disabled>
-									<label for="star-2" title="2 stars">
-											<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-									</label>
-									<input id="star-1" type="radio" name="rating-20" value="star-1" disabled>
-									<label for="star-1" title="1 star">
-											<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-									</label>
+									<?=$engine->rate($show_offer['pid'])?>
 								</div>
 								<!-- ./Star rating -->
 								<span class="city">
@@ -104,7 +85,7 @@ if(!isset($pid) || empty($pid) || $offers_num <= 0)
 									</div>
 								</div>
 								
-								<!-- <div class="panel panel-default"> 
+								<div class="panel panel-default"> 
 									<div class="panel-heading" role="tab" id="heading-two">
 										<h4 class="panel-title">
 											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-two" aria-expanded="true" aria-controls="collapse-two">
@@ -116,13 +97,36 @@ if(!isset($pid) || empty($pid) || $offers_num <= 0)
 									<div class="panel-collapse collapse" id="collapse-two" role="tablist" aria-labelledby="heading-two">
 										<div class="panel-body">
 											<div class="copon">
-												
-												<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+												<?php 
+												$mid = $show_offer['uid'];
+					                            $pranches = $show_offer['pranches'];
+					                            $gcomp = $engine->connect()->query("SELECT * FROM `companies` WHERE `merchant` = '$mid' AND `name` LIKE '%$pranches%'");
+					                            while($shcomp = $gcomp->fetch_array()){?>
+					                            <div class="panel-body">
+					                            	<h3>الفرع</h3>
+					                                <p class="no-margin">
+					                                	<?=$shcomp['name']?>
+													</p>
+					                                <h3>العنوان</h3>
+					                                <p class="product-para">
+					                                	<?=html_entity_decode($shcomp['address'])?>
+					                                </p>
+					                                <h3>التواصل</h3>
+					                                <p class="product-para">
+					                                	<?=html_entity_decode($shcomp['contact'])?>
+					                                </p>
+					                                <div class="show-map">
+					                                    <a class="btn btn-primary btn-xs" title="View Location" target="_blank" href="https://www.google.com/maps/place/<?=$shcomp['place']?>"></i>&nbsp;عرض على الخريطة</a>
+					                                </div>
+					                            </div>
+					                            <?}?> 
+
+												<!-- <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> -->
 
 											</div>
 										</div>
 									</div>
-								</div> -->
+								</div>
 								
 		
 								<div class="panel panel-default"> 
@@ -204,26 +208,7 @@ if(!isset($pid) || empty($pid) || $offers_num <= 0)
 										</p>
 										<!-- Star rating -->
 										<div class="star-rating">
-											<input id="star-5" type="radio" name="rating-32" value="star-5" disabled>
-											<label for="star-5" title="5 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-4" type="radio" name="rating-32" value="star-4"  disabled>
-											<label for="star-4" title="4 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-3" type="radio" name="rating-32" value="star-3" checked disabled>
-											<label for="star-3" title="3 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-2" type="radio" name="rating-32" value="star-2" disabled>
-											<label for="star-2" title="2 stars">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
-											<input id="star-1" type="radio" name="rating-32" value="star-1" disabled>
-											<label for="star-1" title="1 star">
-													<i class="active glyphicon glyphicon-star" aria-hidden="true"></i>
-											</label>
+											<?=$engine->rate($show_offers['pid'])?>
 										</div>
 										<!-- ./Star rating -->
 										<span class="city">
@@ -243,7 +228,7 @@ if(!isset($pid) || empty($pid) || $offers_num <= 0)
 											<?=$show_offers['newprice']?>SAR
 										</span>
 										<?php 
-										if($engine->isfav($pid)){?>
+										if($engine->isfav($show_offers['pid'])){?>
 										<button class="favourite-btn done" onclick="addto_fav('<?=$pid?>','del')"><i class="flaticon-love-and-romance-1"></i> </button>
 										<?}else{?>
 										<button class="favourite-btn" onclick="addto_fav('<?=$pid?>','add')"><i class="flaticon-love-and-romance-1"></i> </button>
@@ -252,72 +237,27 @@ if(!isset($pid) || empty($pid) || $offers_num <= 0)
 								</div>
 							</div>
 							<?}?>
-	
 							<h3>آخر المدونات</h3>
 	
-							<a class="single-blog" href="blog-details.html">
+							<?php 
+							$get_articles = $engine->get_query("SELECT * FROM `news`");
+							while($show_articles = $get_articles->fetch_array()){?>
+							<a href="show_article?article=<?=$show_article['id']?>" class="single-blog">
 								<div class="col-sm-4 col-xs-12">
-									<img src="assets/images/zoomslider/06.jpg" class="img-responsive" alt="">
+									<img src="<?=$show_article['img']?>" class="img-responsive" alt="">
 								</div>
 								
 								<div class="col-sm-8 col-xs-12">
 									<span class="section">
 										<i class="flaticon-miscellaneous"></i> 
-										علماء
+										<?=$show_article['section']?>
 									</span>
 									<p class="two-line">
-										هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
+										<?=$show_article['title']?>
 									</p>
 								</div>
 							</a>
-	
-							<a class="single-blog" href="blog-details.html">
-								<div class="col-sm-4 col-xs-12">
-									<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
-								</div>
-								
-								<div class="col-sm-8 col-xs-12">
-									<span class="section">
-										<i class="flaticon-miscellaneous"></i> 
-										علماء
-									</span>
-									<p class="two-line">
-										هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-									</p>
-								</div>
-							</a>
-	
-							<a class="single-blog" href="blog-details.html">
-								<div class="col-sm-4 col-xs-12">
-									<img src="assets/images/zoomslider/06.jpg" class="img-responsive" alt="">
-								</div>
-								
-								<div class="col-sm-8 col-xs-12">
-									<span class="section">
-										<i class="flaticon-miscellaneous"></i> 
-										علماء
-									</span>
-									<p class="two-line">
-										هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-									</p>
-								</div>
-							</a>
-	
-							<a class="single-blog" href="blog-details.html">
-								<div class="col-sm-4 col-xs-12">
-									<img src="assets/images/zoomslider/07.jpg" class="img-responsive" alt="">
-								</div>
-								
-								<div class="col-sm-8 col-xs-12">
-									<span class="section">
-										<i class="flaticon-miscellaneous"></i> 
-										علماء
-									</span>
-									<p class="two-line">
-										هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
-									</p>
-								</div>
-							</a>
+							<?}?>
 	
 						</div>
 					</div>

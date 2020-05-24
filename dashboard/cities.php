@@ -1,7 +1,12 @@
 <label>المدينة</label>
 <select id="heard" name="city" class="form-control" onchange="s_city()">
       <option disabled selected>اختر المدينة</option>
-      <option value="الرياض">الرياض</option>
+      <?php 
+      $get_cities = $engine->get_query("SELECT * FROM `cities`");
+      while($show_cities = $get_cities->fetch_array()){?>
+      <option value="<?=$show_cities['name']?>"><?=$show_cities['name']?></option>
+      <?}?>
+      <!-- <option value="الرياض">الرياض</option>
       <option value="الخرج">الخرج</option>
       <option value="المجمعة">المجمعة</option>
       <option value="المزاحمية">المزاحمية</option>
@@ -79,5 +84,5 @@
       <option value="طريب">طريب</option>
       <option value="البرك">البرك</option>
       <option value="الحائط">الحائط</option>
-      <option value="منطقة أخرى">منطقة أخرى</option>
+      <option value="منطقة أخرى">منطقة أخرى</option> -->
 </select>

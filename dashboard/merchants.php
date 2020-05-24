@@ -3,8 +3,8 @@ include 'header.php';
 $engine->permissions(1,1,0,0);
 ?>         
 <!-- page content -->
-<div class="right_col" role="main">
-    <div class="row">
+<div class="right_col" role="main" id="divcont">
+    <div class="row" id="cont">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
@@ -116,7 +116,7 @@ $engine->permissions(1,1,0,0);
                             <th><?=$show['balance']. ' ' .DCRC?></th>
                             <th><?='%'.$show['ratio']?></th>
                             <th>
-                                <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#del<?=$show['id']?>">
+                                <button class="btn btn-danger btn-flat" onclick="del('users','<?=$show[id]?>')">
                                     <i class="fa fa-trash"></i>
                                 </button>
                                 <a href="edtusers?edit=<?=$show['id']?>" data-placement="top" data-toggle="tooltip"data-original-title="تعديل" class="btn btn-success btn-flat">
@@ -165,28 +165,6 @@ $engine->permissions(1,1,0,0);
                               </div>
                             </div>
                         </tr>
-                        <!--delete confirm-->
-                        <div class="modal fade" id="del<?=$show['id']?>" tabindex="-1" role="dialog">
-                            <div class="modal-dialog">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h3>تأكيد الحذف</h3>
-                                    </div>
-                                    <div class="modal-body modal-body-sub_agile">
-                                        <div class="modal_body_left modal_body_left1">
-                                            <h3 id="dmsg<?=$show['id']?>">
-                                                هل أنت متأكد من أنك تريد  حذف هذا المشرف ؟
-                                            </h3>
-                                            <button class="btn btn-danger" onclick="del('users','<?=$show[id]?>')">حذف</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- //Modal content-->
-                            </div>
-                        </div>
-                        <!--/ delete confirm-->
                         <?}?>
                         </tbody>
                     </table>

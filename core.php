@@ -38,14 +38,7 @@ define(S_KEYS, $showsinfo['skeys']);
 define(S_DESC, $showsinfo['sdesc']);
 define(S_IMG, $showsinfo['slogo']);
 define(S_ICON, $showsinfo['favicon']);
-if($showsinfo['dc'] == 'SAR')
-{
-  define(DCR,'ر.س');
-}
-else
-{
-  define(DCR, $showsinfo['dc']);
-}
+define(DCR, 'ر.س');
 define(S_PHONE, $showsinfo['sphone']);
 define(S_MAIL, $showsinfo['smail']);  
 define(PRIVACY, $showsinfo['privacy']);  
@@ -60,10 +53,7 @@ define(S_PRIVACY, $showsinfo['privacy']);
 define(S_CONTACT, $showsinfo['contact']); 
 define(BANER, $showsinfo['baner']);  
 define(IOS, $showsinfo['ios']);
-if(DCR == "SAR")
-{
-  define(DCRC, 'ر.س');
-}
+define(DCRC, 'ر.س');
 }
 else
 {

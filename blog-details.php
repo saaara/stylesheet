@@ -1,69 +1,42 @@
 <?php 
 include 'sub_header.php';
-$type = $engine->filter_text($_GET['section']);
+$id = $engine->filter_text($_GET['article']);
+$get_article = $engine->get_query("SELECT * FROM `news` WHERE `id` = '$id'");
+$show_article = $get_article->fetch_array();
+$articles_num = $get_article->num_rows;
+if(!isset($id) || empty($id) || $articles_num <= 0)
+{
+	$locat = 'home';
+	header("location: ".$locat." ");
+}
 ?>
-	<div>
+		<!-- Offer Details -->
 		<div class="rest inner-page">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-xs-12">
-						<h2 class="main-title">
-							<img src="assets/images/icons/cage.svg" class="cage" alt="">
-							الأقسام  
-							<img src="assets/images/icons/heart.svg" class="heart" alt="">
-						</h2>
-
-						<div class="row">
-							<?php 
-							if(isset($type) && !empty($type))
-							{
-								$get_sections = $engine->get_query("SELECT * FROM `ssections` WHERE `msec` = '$type'");
-								while($show_section = $get_sections->fetch_array()){?>
-								<div class="col-sm-3 col-xs-12">
-									<a href="offsection?section=<?=$show_section['name']?>" class="offer-section">
-										<?php 
-										if($show_section['img'] == ''){?>
-											<i style="font-size:30px;" class="fa fa-<?=$show_section['icon']?>"></i>
-										<?}else{?>
-											<img src="<?=$show_section['img']?>" style="width:40px;">
-										<?}?>
-										<p><?=$show_section['name']?></p>
+						
+						<div class="offer-details">
+							<div class="img-inner">
+								<img src="<?=$show_article['img']?>" class="img-responsive">
+							</div>
+							<div class="info">
+								<span class="section">
+									<i class="flaticon-miscellaneous"></i> 
+									<?=$show_article['section']?>
+								</span>
+								<p class="one-line title">
+									<a href="#">
+										<?=$show_article['title']?>
 									</a>
-								</div>
-							<?}}else{
-								$get_sections = $engine->get_query("SELECT * FROM `sections`");
-								while($show_section = $get_sections->fetch_array()){?>
-								<div class="col-sm-3 col-xs-12">
-									<a href="?section=<?=$show_section['name']?>" class="offer-section">
-										<?php 
-										if($show_section['img'] == ''){?>
-											<i style="font-size:30px;" class="fa fa-<?=$show_section['icon']?>"></i>
-										<?}else{?>
-											<img src="<?=$show_section['img']?>" style="width:40px;">
-										<?}?>
-										<p><?=$show_section['name']?></p>
-									</a>
-								</div>
-							<?}}?>
-							<!-- Pagination -->
-							<!-- <div class="col-xs-12">
-								<div class="page-navigation">
-									<div class="pages-list">
-										<span><i class="fas fa-chevron-right"></i></span>
-										<span>1</span>
-										<a href="#">2</a> 
-										<a href="#">3</a> 
-										<a href="#">4</a>
-										<a href="#">5</a>
-										<a href="#"><i class="fas fa-chevron-left"></i></a>
-									</div>
-								</div>
-							</div> -->
-							<!-- ./Pagination -->
-
+								</p>
+							</div>	
+							<div class="paragraph">
+								<p>
+									<?=html_entity_decode($show_article['text'])?>
+								</p>
+							</div>						
 						</div>
-
-
 					</div>
 					<div class="col-md-4 col-xs-12">
 						<div class="side-bar">
@@ -112,7 +85,7 @@ $type = $engine->filter_text($_GET['section']);
 											<?=$show_offers['newprice']?>SAR
 										</span>
 										<?php 
-										if($engine->isfav($show_offers['pid'])){?>
+										if($engine->isfav($pid)){?>
 										<button class="favourite-btn done" onclick="addto_fav('<?=$pid?>','del')"><i class="flaticon-love-and-romance-1"></i> </button>
 										<?}else{?>
 										<button class="favourite-btn" onclick="addto_fav('<?=$pid?>','add')"><i class="flaticon-love-and-romance-1"></i> </button>
@@ -121,8 +94,8 @@ $type = $engine->filter_text($_GET['section']);
 								</div>
 							</div>
 							<?}?>
-							<h3>آخر المدونات</h3>
 	
+							<h3>آخر المدونات</h3>
 							<?php 
 							$get_articles = $engine->get_query("SELECT * FROM `news`");
 							while($show_articles = $get_articles->fetch_array()){?>
@@ -148,8 +121,8 @@ $type = $engine->filter_text($_GET['section']);
 				</div>
 			</div>
 		</div>
-	</div>
-		
+		<!-- ./Offer Details -->
+
 <?php 
 include 'footer.php';
 ?>

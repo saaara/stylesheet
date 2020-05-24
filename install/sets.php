@@ -344,6 +344,12 @@ $query = mysqli_query($conect,"CREATE TABLE  IF NOT EXISTS `sponsers` (
 ) ENGINE = MYISAM");
 if($query)$n++;
 // table 28
+$query = mysqli_query($conect,"CREATE TABLE  IF NOT EXISTS `cities` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY , 
+`name` VARCHAR(255) NOT NULL
+) ENGINE = MYISAM");
+if($query)$n++;
+// table 29
 $open  = fopen("../core/config/config.php",w);
 $write = fwrite($open , "<?php
 define(DB_SERVER   , '$srvername'); 
@@ -352,7 +358,7 @@ define(DB_PASSW    , '$datapass');
 define(DB_NAME     , '$dbsnm');
 ?>");
 $close = fclose($open);
-    	if($conect && $sdb && $n == 28 && $write && $close)
+    	if($conect && $sdb && $n == 29 && $write && $close)
 	    {
 		    $step2="http://".$_SERVER['SERVER_NAME']."/install/index.php?step=info";
 	        header("location:".$step2."");
