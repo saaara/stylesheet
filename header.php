@@ -125,27 +125,31 @@ $uid = USER_ID;
 
 								<div class="book_btn">
 									<div class="account">
-										<?if($engine->havesession()){?>
-										<button>
-											<i class="far fa-user-circle"></i> <?=USER_NAME?>
-										</button>
-										<ul>
-											<li>
-												<a href="profile">حسابي</a>
-											</li>
-											<li>
-												<a href="my-sells">مشترياتي</a>
-											</li>
-											<li>
-												<a href="favourite">مفضلتي</a>
-											</li>
-											<li>
-												<form method="post">
-													<button name="signout" class="logout">تسجيل خروج</button>
-												</form>
-											</li>
-										</ul>
+										<?if($engine->havesession()){
+										if(USER_RANK == 1)
+										{?>
+											<a href="dashboard">لوحة التحكم</a>
 										<?}else{?>
+											<button>
+												<i class="far fa-user-circle"></i> <?=USER_NAME?>
+											</button>
+											<ul>
+												<li>
+													<a href="profile">حسابي</a>
+												</li>
+												<li>
+													<a href="my-sells">مشترياتي</a>
+												</li>
+												<li>
+													<a href="favourite">مفضلتي</a>
+												</li>
+												<li>
+													<form method="post">
+														<button name="signout" class="logout">تسجيل خروج</button>
+													</form>
+												</li>
+											</ul>
+										<?}}else{?>
 											<button data-toggle="modal" data-target="#exampleModalLong">
 												<i class="flaticon-interface"></i> تسجيل الدخول
 											</button>
@@ -319,14 +323,13 @@ $uid = USER_ID;
 
 												</div>
 												<div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
-													<form class="form-group signup-form">
-														<input class="form-control" type="text" placeholder="الاسم" required>
-														<input class="form-control" type="text" placeholder="اسم المستخدم" required>
-														<input class="form-control" type="enail" placeholder="البريد الإلكتروني" required>
-														<input class="form-control" type="password" placeholder="كلمة المرور" required>
-														<input class="form-control" type="password" placeholder="تأكيد كلمة المرور" required>
-														<input class="form-control" type="tel" placeholder="رقم الهاتف" required>
-														<button type="submit" class="btn btn-primary btn-block">إنشاء حساب</button>
+													<form name="signup" class="form-group signup-form">
+														<input class="form-control" name="name" type="text" placeholder="الاسم" required>
+														<input class="form-control" name="mail" type="email" placeholder="البريد الإلكتروني" required>
+														<input class="form-control" name="password" type="password" placeholder="كلمة المرور" required>
+														<input class="form-control" name="repassword" type="password" placeholder="تأكيد كلمة المرور" required>
+														<input class="form-control" type="tel" placeholder="رقم الهاتف" name="phone" required>
+														<button type="button" class="btn btn-primary btn-block" onclick="s_up()">إنشاء حساب</button>
 													</form>
 													<div class="signup-social row">
 														<div class="col-sm-4 col-xs-12">

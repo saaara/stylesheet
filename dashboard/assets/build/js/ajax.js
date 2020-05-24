@@ -136,9 +136,9 @@ function login()
             if(response['status'] == 1)
             {
                 salert("عملية ناجحة!",response['details'],"success","");
-                window.location.assign('dashboard/home');
-                // setTimeout(function()
-                // {location.reload();},2000);
+                //window.location.assign('dashboard/home');
+                setTimeout(function()
+                {location.reload();},2000);
             }
             else
             {
@@ -156,12 +156,7 @@ function s_up()
     var pass   = document.forms["signup"]["password"].value ;
     var name   = document.forms["signup"]["name"].value ;
     var repass = document.forms["signup"]["repassword"].value ;
-    var type   = document.forms["signup"]["type"].value ;
     var phone  = document.forms["signup"]["phone"].value ;
-    if(type ==3)
-    {
-        var ratio   = document.forms["signup"]["ratio"].value ;
-    }
     var Xreq  = new XMLHttpRequest();
     if(pass == repass)
     {
@@ -190,7 +185,7 @@ function s_up()
     {
         document.getElementById('repass').style.border = '1px solid red';
     }
-    Xreq.open("GET",'../core/validation.php?key=signup&mail='+email+'&pass='+pass+'&name='+name+'&type='+type+"&ratio="+ratio+"&phone="+phone,true);
+    Xreq.open("GET",'core/validation.php?key=signup&mail='+email+'&pass='+pass+'&name='+name+"&phone="+phone,true);
     // Xreq.setrequestheader("content-type","application/x-www-form-urlencoded") for the post method
     Xreq.send();
 }

@@ -72,9 +72,10 @@ if(isset($_SESSION['email']) && isset($_SESSION['password']))
   define(USER_RANK,     $us_data['rank']);
   define(USER_RATIO,    $us_data['ratio']);
   define(USER_IMG,      $us_data['usrimg']); 
-  define(USER_ACTIVE,  $us_data['country']);
+  define(USER_ACTIVE,   $us_data['country']);
   define(USER_BALANCE,  $us_data['balance']);
-  define(USER_PBALANCE,  $us_data['pbalance']);
+  define(USER_PHONE,    $us_data['phone']);
+  define(USER_PBALANCE, $us_data['pbalance']);
 }
 else
 {

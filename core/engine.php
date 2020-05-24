@@ -37,9 +37,8 @@ class engine
 	}
 
 	//sign up function 
-	function signup ($email,$name,$password,$type,$ratio,$phone)
+	function signup ($email,$name,$password,$phone)
 	{   
-	    $locat    = S_URI . "/meet";
 	    $hash     = "#AHMHOZ#";
 	    $password = md5(md5($hash.$password.$hash));
 		$username = str_replace(' ', '_', $name);
@@ -49,27 +48,16 @@ class engine
 		$id  = md5("amed".$num."hoz");
 		$img = S_URI."/assets/images/user.png";
 		$ip  = $_SERVER['REMOTE_ADDR'];
-		if($type == 0)
-		{
-			$active = 1;
-		}
-		else if($type == 2)
-		{
-			$active = 1;
-		}
-		else
-		{
-			$active = 0;
-		}
+		$active = 1;
 		if($vunn >= 1 )
 		{
 			$num       = rand(1,1000);
 			$nusername =   $username.$num;
-			$addusr   = $this->connect()->query("INSERT INTO users (`id`,`mail`,`usrname`,`password`,`name`,`usrimg`,`rank`,`active`, `ratio`,`phone`) values ('$id','$email' ,'$nusername' ,'$password', '$name','$img','$type','$active', '$ratio','$phone') ");
+			$addusr   = $this->connect()->query("INSERT INTO users (`id`,`mail`,`usrname`,`password`,`name`,`usrimg`,`rank`,`active`,`phone`) values ('$id','$email' ,'$nusername' ,'$password', '$name','$img','0','$active','$phone') ");
 		} 
 		else
 		{
-			$addusr   = $this->connect()->query("INSERT INTO users (`id`,`mail`,`usrname`,`password`,`name`,`usrimg`,`rank`,`active`, `ratio`,`phone`) values ('$id','$email' ,'$username' ,'$password', '$name','$img','$type','$active','$ratio','$phone') ");
+			$addusr   = $this->connect()->query("INSERT INTO users (`id`,`mail`,`usrname`,`password`,`name`,`usrimg`,`rank`,`active`,`phone`) values ('$id','$email' ,'$username' ,'$password', '$name','$img','0','$active','$phone') ");
 		}
 		if($addusr)
 		{

@@ -6,9 +6,7 @@ if($key == 'signup')
 {
   $email    = strip_tags(strtolower(htmlspecialchars(addslashes($_GET['mail'])))); 
   $name     = strip_tags(strtolower(htmlspecialchars(addslashes($_GET['name']))));
-  $type     = strip_tags(strtolower(htmlspecialchars(addslashes($_GET['type']))));
   $pass     = strip_tags(htmlspecialchars(addslashes($_GET['pass']))) ;
-  $ratio    = strip_tags(htmlspecialchars(addslashes($_GET['ratio']))) ;
   $phone    = strip_tags(htmlspecialchars(addslashes($_GET['phone']))) ;
   $q        = "SELECT * FROM users WHERE `mail` LIKE '%$email%'";
   $vem      = $engine->connect()->query($q);
@@ -45,7 +43,7 @@ if($key == 'signup')
     }
     else
     {
-        $engine->signup ($email,$name,$pass,$type,$ratio,$phone);
+        $engine->signup ($email,$name,$pass,$phone);
     }
   }
   else
